@@ -188,24 +188,6 @@
     .hero-trust-avatars span:first-child { margin-left: 0; }
     .hero-trust-avatars span:nth-child(2) { background: linear-gradient(135deg, var(--purple-bright), var(--purple-deep)); }
     .hero-trust-avatars span:nth-child(3) { background: linear-gradient(135deg, var(--purple-deep), var(--magenta)); }
-    /* Scroll indicator after hero */
-    .scroll-hint {
-      margin-top: 38px;
-      font-size: 13px; color: var(--gray);
-      font-weight: 600;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 8px;
-      animation: floatDown 2.5s ease-in-out infinite;
-    }
-    .scroll-hint svg {
-      width: 22px; height: 22px;
-      fill: none; stroke: var(--magenta); stroke-width: 2.5;
-      stroke-linecap: round; stroke-linejoin: round;
-    }
-    @keyframes floatDown {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
     /* ═══ SECTORS STRIP ═══ */
     .sectors-section { padding: 72px 0; background: var(--white); }
     .sectors-head { text-align: center; margin-bottom: 32px; }
@@ -214,22 +196,28 @@
     }
     .sectors-head h2 .accent { color: var(--magenta); }
     .sectors-head p { color: var(--gray); font-size: 15px; }
-    .sectors-grid {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 10px; max-width: 920px; margin: 0 auto;
-    }
-    .sector-chip {
-      padding: 12px 18px;
-      background: var(--lavender); color: var(--purple-deep);
-      border-radius: 999px;
-      font-weight: 700; font-size: 14px;
+    .sectors-list {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--body);
+      font-weight: 500;
       letter-spacing: -0.01em;
-      border: 1.5px solid transparent;
-      transition: all 0.15s;
     }
-    .sector-chip:hover {
-      background: var(--magenta); color: var(--white);
-      border-color: var(--magenta-deep);
+    .sectors-list strong {
+      color: var(--magenta-deep);
+      font-weight: 700;
+    }
+    .sectors-list .sep {
+      color: var(--gray-line);
+      margin: 0 8px;
+      font-weight: 400;
+      display: inline-block;
+    }
+    @media (max-width: 600px) {
+      .sectors-list { font-size: 17px; }
     }
     /* ═══ HOW IT WORKS (intro 3 pieces) ═══ */
     .how { padding: 80px 0; background: var(--lavender); }
@@ -1820,10 +1808,6 @@
           <div class="hero-trust-avatars"><span></span><span></span><span></span></div>
           <div><strong>+100 negocios</strong> ya están en el sistema</div>
         </div>
-        <div class="scroll-hint">
-          <span>Mira cómo funciona</span>
-          <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
-        </div>
       </div>
     </div>
   </section>
@@ -1834,20 +1818,20 @@
         <h2>Trabajamos con negocios <span class="accent">como el tuyo</span>.</h2>
         <p>Sectores en los que ya estamos generando resultados.</p>
       </div>
-      <div class="sectors-grid reveal">
-        <span class="sector-chip">Hostelería</span>
-        <span class="sector-chip">Casas rurales</span>
-        <span class="sector-chip">Clínicas y salud</span>
-        <span class="sector-chip">Comercio local</span>
-        <span class="sector-chip">E-commerce</span>
-        <span class="sector-chip">Belleza y estética</span>
-        <span class="sector-chip">Servicios profesionales</span>
-        <span class="sector-chip">Inmobiliaria</span>
-        <span class="sector-chip">Educación</span>
-        <span class="sector-chip">Moda</span>
-        <span class="sector-chip">Fitness</span>
-        <span class="sector-chip">SaaS y B2B</span>
-      </div>
+      <p class="sectors-list reveal">
+        Hostelería <span class="sep">·</span>
+        Casas rurales <span class="sep">·</span>
+        Clínicas y salud <span class="sep">·</span>
+        Comercio local <span class="sep">·</span>
+        E-commerce <span class="sep">·</span>
+        Belleza y estética <span class="sep">·</span>
+        Servicios profesionales <span class="sep">·</span>
+        Inmobiliaria <span class="sep">·</span>
+        Educación <span class="sep">·</span>
+        Moda <span class="sep">·</span>
+        Fitness <span class="sep">·</span>
+        SaaS y B2B
+      </p>
     </div>
   </section>
   <!-- ═══ HOW IT WORKS ═══ -->
