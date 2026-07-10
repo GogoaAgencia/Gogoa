@@ -1554,6 +1554,42 @@
       display: flex; align-items: center; gap: 12px;
       margin-bottom: 24px;
     }
+    /* ═══ FICHA BRIDGE ═══ */
+    .ficha-bridge-section { padding: 8px 0 64px; background: var(--white); }
+    .ficha-bridge {
+      max-width: 880px; margin: 0 auto;
+      background: linear-gradient(120deg, var(--lavender) 0%, #FDF4FF 100%);
+      border: 1.5px solid rgba(217,70,239,0.2);
+      border-radius: 24px;
+      padding: 36px 32px;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 22px;
+    }
+    .ficha-bridge-text { flex: 1 1 380px; }
+    .ficha-bridge-text h3 {
+      font-size: clamp(21px, 4vw, 26px);
+      font-weight: 900; letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .ficha-bridge-text h3 .accent { color: var(--magenta-deep); }
+    .ficha-bridge-text p {
+      color: var(--body); font-size: 16px; line-height: 1.55;
+    }
+    .ficha-bridge-text p strong { color: var(--ink); }
+    .ficha-bridge-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white);
+      border: 2px solid var(--magenta);
+      color: var(--magenta-deep);
+      padding: 15px 26px; border-radius: 999px;
+      font-weight: 800; font-size: 16px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .ficha-bridge-cta:hover { background: var(--magenta); color: var(--white); }
     .anti-promesas-eyebrow {
       font-size: 11px; font-weight: 800;
       color: var(--magenta-hot);
@@ -1858,6 +1894,20 @@
           <h3>Vendemos</h3>
           <p>Emails y WhatsApp automatizados que acompañan al cliente hasta la compra. Tú solo atiendes a quien ya decidió comprar.</p>
         </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ FICHA BRIDGE ═══ -->
+  <section class="ficha-bridge-section">
+    <div class="container">
+      <div class="ficha-bridge reveal">
+        <div class="ficha-bridge-text">
+          <h3>¿Solo necesitas salir en <span class="accent">Google Maps</span>?</h3>
+          <p>Te montamos la ficha de Google de tu negocio, completa y verificada, por <strong>150€, pago único, sin cuotas</strong>. Y si lo que buscas es el sistema completo de captación, sigue bajando — te lo enseñamos paso a paso.</p>
+        </div>
+        <a class="ficha-bridge-cta" href="gogoa-ficha-google.html" onclick="if(typeof gtag!=='undefined')gtag('event','ficha_bridge_click',{event_category:'navigation'});">
+          Ver cómo funciona →
+        </a>
       </div>
     </div>
   </section>
