@@ -3075,6 +3075,10 @@
         });
         const data = await response.json();
         if (data.success === 'true' || data.success === true) {
+          if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-formulario' });
+          }
           successEl.style.display = 'block';
           form.reset();
           successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -3100,6 +3104,17 @@
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         handleFormSubmit(form);
+      });
+    });
+
+    // Conversión: inicio de conversación por WhatsApp (todos los enlaces wa.me de la home)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+      a.addEventListener('click', () => {
+        if (typeof fbq !== 'undefined') fbq('track', 'Contact');
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-whatsapp' });
+          gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'home' });
+        }
       });
     });
     const observer = new IntersectionObserver((entries) => {
