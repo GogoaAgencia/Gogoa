@@ -1,539 +1,3171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tu negocio en Google Maps · 150€ pago único | Gogoa</title>
-<meta name="description" content="Te montamos la ficha de tu negocio en Google Maps, completa y verificada. 150€ + IVA, pago único, sin cuotas. Para que te llamen los clientes de tu zona.">
-
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1563652121852282');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1563652121852282&ev=PageView&noscript=1"/></noscript>
-
-<!-- GA4 + Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TR0SJVF411"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-TR0SJVF411');
-gtag('config', 'AW-11341761661');
-</script>
-
-<!-- Microsoft Clarity -->
-<script>
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "x2d662lms5");
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --magenta: #D946EF;
-    --magenta-deep: #C026D3;
-    --purple-deep: #4C1D95;
-    --purple-bright: #7C3AED;
-    --lavender: #F5F3FF;
-    --ink: #111827;
-    --body: #374151;
-    --gray: #6B7280;
-    --gray-line: #E5E7EB;
-    --wa: #25D366;
-    --wa-dark: #128C7E;
-    --white: #FFFFFF;
-    --r-lg: 24px;
-    --r-md: 16px;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    color: var(--ink);
-    background: var(--white);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 22px; }
-
-  /* ── NAV ── */
-  .nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 18px 22px;
-    max-width: 720px; margin: 0 auto;
-  }
-  .nav-logo { font-weight: 900; font-size: 24px; color: var(--purple-deep); letter-spacing: -0.04em; text-decoration: none; }
-  .nav-logo span { color: var(--magenta); }
-  .nav-wa {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--wa); color: var(--white);
-    padding: 10px 18px; border-radius: 999px;
-    font-weight: 800; font-size: 14px; text-decoration: none;
-    box-shadow: 0 6px 18px rgba(37,211,102,0.35);
-  }
-  .nav-wa svg { width: 16px; height: 16px; fill: currentColor; }
-
-  /* ── HERO ── */
-  .hero {
-    text-align: center;
-    padding: 44px 0 36px;
-    background: linear-gradient(175deg, var(--white) 0%, var(--lavender) 100%);
-  }
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--white);
-    border: 1px solid rgba(217,70,239,0.25);
-    color: var(--magenta-deep);
-    padding: 8px 16px; border-radius: 999px;
-    font-size: 12px; font-weight: 800;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-  .hero h1 {
-    font-size: clamp(34px, 7vw, 52px);
-    font-weight: 900; line-height: 1.04;
-    letter-spacing: -0.045em;
-    margin-bottom: 16px;
-  }
-  .hero h1 .mag { color: var(--magenta); }
-  .hero-sub {
-    font-size: clamp(17px, 3.4vw, 20px);
-    color: var(--body); font-weight: 500;
-    max-width: 540px; margin: 0 auto 30px;
-  }
-  .hero-sub strong { color: var(--ink); font-weight: 800; }
-
-  /* ── SIGNATURE: mockup Maps ── */
-  .maps-mock {
-    max-width: 400px; margin: 0 auto 30px;
-    background: var(--white);
-    border-radius: var(--r-lg);
-    box-shadow: 0 24px 60px rgba(76,29,149,0.16);
-    border: 1px solid var(--gray-line);
-    overflow: hidden;
-    text-align: left;
-  }
-  .mock-search {
-    display: flex; align-items: center; gap: 10px;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--gray-line);
-    font-size: 15px; color: var(--body); font-weight: 600;
-  }
-  .mock-search svg { width: 18px; height: 18px; stroke: var(--gray); stroke-width: 2.2; fill: none; flex-shrink: 0; }
-  .mock-search .trade { color: var(--ink); font-weight: 800; }
-  .mock-map {
-    height: 96px;
-    background:
-      radial-gradient(circle at 62% 45%, rgba(217,70,239,0.16) 0%, transparent 45%),
-      linear-gradient(105deg, #EDF2ED 0%, #E3EDE4 42%, #DCE9F5 100%);
-    position: relative;
-  }
-  .mock-map::before, .mock-map::after {
-    content: ''; position: absolute; background: rgba(255,255,255,0.85);
-  }
-  .mock-map::before { top: 0; bottom: 0; left: 38%; width: 9px; transform: skewX(-14deg); }
-  .mock-map::after { left: 0; right: 0; top: 52%; height: 7px; transform: skewY(-3deg); }
-  .mock-pin {
-    position: absolute; top: 26%; left: 58%;
-    width: 34px; height: 34px;
-    background: var(--magenta);
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    box-shadow: 0 8px 20px rgba(217,70,239,0.5);
-    animation: pinDrop 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
-    z-index: 2;
-  }
-  .mock-pin::after {
-    content: ''; position: absolute; inset: 9px;
-    background: var(--white); border-radius: 50%;
-  }
-  @keyframes pinDrop {
-    from { transform: rotate(-45deg) translate(-22px,-22px); opacity: 0; }
-    to   { transform: rotate(-45deg) translate(0,0); opacity: 1; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .mock-pin { animation: none; }
-  }
-  .mock-card { padding: 16px 18px 18px; }
-  .mock-name { font-weight: 800; font-size: 16px; letter-spacing: -0.01em; }
-  .mock-rating { font-size: 13px; color: var(--body); margin: 3px 0 10px; }
-  .mock-rating .stars { color: #F59E0B; letter-spacing: 1px; }
-  .mock-actions { display: flex; gap: 8px; }
-  .mock-btn {
-    flex: 1; text-align: center;
-    padding: 9px 0; border-radius: 999px;
-    font-size: 13px; font-weight: 700;
-    border: 1.5px solid var(--gray-line); color: var(--body);
-  }
-  .mock-btn.call { background: var(--purple-deep); border-color: var(--purple-deep); color: var(--white); }
-  .mock-caption { font-size: 13px; color: var(--gray); margin-top: 14px; }
-
-  .cta-wa {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--wa); color: var(--white);
-    padding: 18px 32px; border-radius: 999px;
-    font-weight: 900; font-size: 18px;
-    text-decoration: none;
-    box-shadow: 0 14px 34px rgba(37,211,102,0.42);
-    transition: transform 0.15s;
-  }
-  .cta-wa:hover { transform: translateY(-2px); }
-  .cta-wa svg { width: 22px; height: 22px; fill: currentColor; }
-  .cta-note { font-size: 13px; color: var(--gray); margin-top: 12px; }
-
-  /* ── SECCIONES ── */
-  section { padding: 52px 0; }
-  section.alt { background: var(--lavender); }
-  .sec-title {
-    font-size: clamp(26px, 5.5vw, 36px);
-    font-weight: 900; letter-spacing: -0.035em; line-height: 1.1;
-    text-align: center; margin-bottom: 14px;
-  }
-  .sec-title .mag { color: var(--magenta); }
-  .sec-sub { text-align: center; color: var(--body); font-size: 17px; max-width: 560px; margin: 0 auto 34px; }
-
-  /* dato */
-  .dato {
-    background: var(--purple-deep);
-    color: var(--white);
-    border-radius: var(--r-lg);
-    padding: 34px 28px;
-    text-align: center;
-  }
-  .dato-num { font-size: clamp(44px, 9vw, 64px); font-weight: 900; letter-spacing: -0.05em; line-height: 1; }
-  .dato-num span { color: #E879F9; }
-  .dato-text { font-size: 17px; margin-top: 10px; color: rgba(255,255,255,0.9); }
-  .dato-text strong { color: var(--white); }
-  .dato-foot { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 16px; }
-
-  /* checklist incluye */
-  .incluye { list-style: none; max-width: 560px; margin: 0 auto; }
-  .incluye li {
-    display: flex; gap: 14px; align-items: flex-start;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--gray-line);
-    font-size: 16px; color: var(--body);
-  }
-  .incluye li:last-child { border-bottom: none; }
-  .incluye li strong { color: var(--ink); }
-  .check {
-    flex-shrink: 0;
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--magenta);
-    display: inline-flex; align-items: center; justify-content: center;
-    margin-top: 1px;
-  }
-  .check svg { width: 14px; height: 14px; stroke: var(--white); stroke-width: 3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* pasos */
-  .pasos { max-width: 560px; margin: 0 auto; counter-reset: paso; }
-  .paso {
-    display: flex; gap: 18px;
-    padding: 18px 0;
-  }
-  .paso-num {
-    flex-shrink: 0;
-    width: 40px; height: 40px; border-radius: 12px;
-    background: var(--lavender); color: var(--purple-deep);
-    font-weight: 900; font-size: 17px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  section.alt .paso-num { background: var(--white); }
-  .paso-body strong { display: block; font-size: 17px; margin-bottom: 3px; }
-  .paso-body p { color: var(--body); font-size: 15px; }
-
-  /* precio */
-  .precio-card {
-    max-width: 480px; margin: 0 auto;
-    background: var(--white);
-    border: 2px solid var(--magenta);
-    border-radius: var(--r-lg);
-    padding: 38px 30px;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(217,70,239,0.14);
-  }
-  .precio-tag { font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--magenta-deep); margin-bottom: 12px; }
-  .precio-num { font-size: 64px; font-weight: 900; letter-spacing: -0.05em; line-height: 1; }
-  .precio-num small { font-size: 24px; font-weight: 800; color: var(--gray); }
-  .precio-iva { color: var(--gray); font-size: 14px; margin-top: 6px; }
-  .precio-split {
-    margin: 22px auto 0; padding: 16px;
-    background: var(--lavender); border-radius: var(--r-md);
-    font-size: 15px; color: var(--body);
-  }
-  .precio-split strong { color: var(--ink); }
-  .precio-cero { margin-top: 18px; font-size: 14px; color: var(--body); }
-  .precio-cero strong { color: var(--ink); }
-
-  /* verdades */
-  .verdades { max-width: 560px; margin: 0 auto; display: grid; gap: 14px; }
-  .verdad {
-    background: var(--white);
-    border-radius: var(--r-md);
-    padding: 20px 22px;
-    border-left: 4px solid var(--magenta);
-  }
-  .verdad strong { display: block; margin-bottom: 4px; font-size: 16px; }
-  .verdad p { color: var(--body); font-size: 15px; }
-
-  /* gremios */
-  .gremios {
-    max-width: 620px; margin: 0 auto;
-    text-align: center;
-    font-size: 17px; line-height: 1.9; color: var(--body); font-weight: 500;
-  }
-  .gremios .sep { color: var(--gray-line); margin: 0 7px; }
-
-  /* faq */
-  .faq { max-width: 560px; margin: 0 auto; }
-  .faq details {
-    border-bottom: 1px solid var(--gray-line);
-    padding: 16px 0;
-  }
-  .faq summary {
-    font-weight: 700; font-size: 16px; cursor: pointer;
-    list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  }
-  .faq summary::after { content: '+'; color: var(--magenta); font-weight: 900; font-size: 20px; flex-shrink: 0; }
-  .faq details[open] summary::after { content: '–'; }
-  .faq details p { margin-top: 10px; color: var(--body); font-size: 15px; }
-
-  /* final */
-  .final {
-    background: linear-gradient(150deg, var(--purple-deep) 0%, #2a1065 100%);
-    color: var(--white);
-    text-align: center;
-    padding: 60px 0;
-  }
-  .final h2 { font-size: clamp(28px, 6vw, 40px); font-weight: 900; letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 12px; }
-  .final h2 span { color: #E879F9; }
-  .final p { color: rgba(255,255,255,0.85); font-size: 17px; max-width: 480px; margin: 0 auto 28px; }
-
-  .footer {
-    text-align: center; padding: 26px 22px;
-    font-size: 13px; color: var(--gray);
-  }
-  .footer a { color: var(--purple-deep); font-weight: 700; text-decoration: none; }
-
-  :focus-visible { outline: 3px solid var(--magenta); outline-offset: 2px; border-radius: 4px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#D946EF">
+  <title>Gogoa · Más clientes para tu negocio en automático</title>
+  <meta name="description" content="Sistema de captación de clientes para PYMES. Restaurantes, casas rurales, clínicas, tiendas. Diagnóstico gratis, sin permanencia, respuesta en 24h.">
+  <meta property="og:title" content="Gogoa · Más clientes para tu negocio">
+  <meta property="og:description" content="Atraemos, convertimos y vendemos en automático. Para PYMES como la tuya. Sin permanencia. Diagnóstico gratis.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D946EF'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Inter,Helvetica,sans-serif' font-weight='900' font-size='58' fill='white'%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ═══ RESET ═══ */
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px; line-height: 1.5;
+      color: var(--ink); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    img, svg { display: block; max-width: 100%; }
+    ::selection { background: var(--magenta); color: white; }
+    /* ═══ TOKENS ═══ */
+    :root {
+      --magenta:        #D946EF;
+      --magenta-hot:    #E879F9;
+      --magenta-deep:   #C026D3;
+      --purple:         #5B21B6;
+      --purple-bright:  #7C3AED;
+      --purple-deep:    #4C1D95;
+      --white:          #FFFFFF;
+      --off-white:      #FAFAFA;
+      --lavender:       #F5F3FF;
+      --lavender-2:     #EDE9FE;
+      --pink-soft:      #FCE7F8;
+      --gray-line:      #E5E7EB;
+      --gray:           #6B7280;
+      --body:           #1F2937;
+      --ink:            #111827;
+      --green:          #16a34a;
+      --wa-green:       #25D366;
+      --wa-dark:        #128C7E;
+      --pad-x:          20px;
+      --r-md: 14px;
+      --r-lg: 22px;
+      --r-xl: 32px;
+    }
+    @media (min-width: 768px) { :root { --pad-x: 32px; } }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: var(--pad-x); padding-right: var(--pad-x); }
+    h1, h2, h3 { font-weight: 800; line-height: 1.02; letter-spacing: -0.025em; color: var(--ink); }
+    p { line-height: 1.6; color: var(--body); }
+    /* ═══ BUTTONS ═══ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px 28px; border-radius: 999px;
+      font-weight: 700; font-size: 16px;
+      letter-spacing: -0.01em; white-space: nowrap;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-magenta { background: var(--magenta); color: var(--white); box-shadow: 0 8px 24px rgba(217,70,239,0.35); }
+    .btn-magenta:hover { background: var(--magenta-deep); }
+    .btn-wa-strong {
+      background: var(--wa-green); color: var(--white);
+      box-shadow: 0 8px 22px rgba(37,211,102,0.4);
+    }
+    .btn-wa-strong:hover { background: var(--wa-dark); transform: translateY(-1px); }
+    .btn-wa-strong svg { width: 18px; height: 18px; fill: currentColor; }
+    .btn-lg { padding: 20px 36px; font-size: 17px; }
+    .btn-block { width: 100%; }
+    /* ═══ NAV ═══ */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid rgba(229,231,235,0.6);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo { font-weight: 900; font-size: 24px; letter-spacing: -0.04em; color: var(--purple-deep); }
+    .logo span { color: var(--magenta); }
+    .nav .btn { padding: 11px 22px; font-size: 14px; }
+    .nav .btn svg { width: 16px; height: 16px; }
+    .nav-wa-pulse::after {
+      content: ''; position: absolute;
+      width: 8px; height: 8px;
+      background: #fff; border-radius: 50%;
+      top: 9px; right: 9px;
+      animation: navPulse 2s ease-in-out infinite;
+    }
+    @keyframes navPulse {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(255,255,255,0.7); }
+      50% { opacity: 0.7; transform: scale(1.2); box-shadow: 0 0 0 6px rgba(255,255,255,0); }
+    }
+    /* ═══ HERO ═══ */
+    .hero {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--lavender) 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    @media (min-width: 768px) { .hero { padding-top: 96px; padding-bottom: 96px; } }
+    .hero::before {
+      content: ''; position: absolute;
+      top: -30%; right: -10%; width: 50%; height: 80%;
+      background: radial-gradient(circle, rgba(217,70,239,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute;
+      bottom: -20%; left: -10%; width: 40%; height: 60%;
+      background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 880px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px;
+      background: var(--pink-soft);
+      border-radius: 999px;
+      font-size: 12px; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--magenta-deep);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 6px; height: 6px; background: var(--magenta);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .hero-headline {
+      font-size: clamp(48px, 10vw, 112px);
+      font-weight: 900; line-height: 0.94;
+      letter-spacing: -0.05em; color: var(--ink);
+      margin-bottom: 26px;
+    }
+    .hero-headline .line { display: block; }
+    .hero-headline .magenta { color: var(--magenta); }
+    .hero-sub {
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.5; color: var(--body);
+      margin: 0 auto 32px; max-width: 640px;
+    }
+    .hero-sub strong { color: var(--ink); font-weight: 700; }
+    .micro-trust {
+      display: flex; flex-wrap: wrap; gap: 8px 18px;
+      justify-content: center; margin-bottom: 24px;
+      font-size: 13px; font-weight: 600; color: var(--body);
+    }
+    .micro-trust-item { display: inline-flex; align-items: center; gap: 6px; }
+    .micro-trust-item::before {
+      content: ''; width: 16px; height: 16px;
+      background: var(--green); border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: 12px; background-position: center;
+      background-repeat: no-repeat; flex-shrink: 0;
+    }
+    /* ═══ SECTORS STRIP ═══ */
+    .sectors-section { padding: 72px 0; background: var(--white); }
+    .sectors-head { text-align: center; margin-bottom: 32px; }
+    .sectors-head h2 {
+      font-size: clamp(26px, 4vw, 40px); margin-bottom: 10px;
+    }
+    .sectors-head h2 .accent { color: var(--magenta); }
+    .sectors-head p { color: var(--gray); font-size: 15px; }
+    .sectors-list {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--body);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .sectors-list strong {
+      color: var(--magenta-deep);
+      font-weight: 700;
+    }
+    .sectors-list .sep {
+      color: var(--gray-line);
+      margin: 0 8px;
+      font-weight: 400;
+      display: inline-block;
+    }
+    @media (max-width: 600px) {
+      .sectors-list { font-size: 17px; }
+    }
+    /* ═══ HOW IT WORKS (intro 3 pieces) ═══ */
+    .how { padding: 80px 0; background: var(--lavender); }
+    .how-head { text-align: center; max-width: 720px; margin: 0 auto 44px; }
+    .how-head h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .how-head h2 .accent { color: var(--magenta); }
+    .how-head p { color: var(--gray); font-size: 17px; }
+    .steps { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 880px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      background: var(--white); padding: 28px;
+      border-radius: var(--r-lg);
+      border-top: 4px solid var(--magenta);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .step:nth-child(2) { border-top-color: var(--purple-bright); }
+    .step:nth-child(3) { border-top-color: var(--purple); }
+    .step:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(76,29,149,0.08); }
+    .step-num {
+      font-size: 38px; font-weight: 900;
+      line-height: 1; color: var(--magenta);
+      letter-spacing: -0.03em; margin-bottom: 14px;
+    }
+    .step:nth-child(2) .step-num { color: var(--purple-bright); }
+    .step:nth-child(3) .step-num { color: var(--purple); }
+    .step h3 { font-size: 22px; margin-bottom: 8px; color: var(--ink); }
+    .step p { font-size: 15px; color: var(--gray); line-height: 1.55; }
+    /* ═══════════════════════════════════════════════════════════
+       FUNNEL — Embudo A2 (cards de anchura decreciente)
+       ═══════════════════════════════════════════════════════════ */
+    .funnel-section {
+      padding: 80px 0;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .funnel-section::before {
+      content: ''; position: absolute;
+      top: 10%; left: -5%; width: 30%; height: 50%;
+      background: radial-gradient(circle, rgba(217,70,239,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .funnel-section::after {
+      content: ''; position: absolute;
+      bottom: 10%; right: -5%; width: 30%; height: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .funnel-head {
+      text-align: center; max-width: 760px;
+      margin: 0 auto 30px; position: relative;
+    }
+    .funnel-head h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .funnel-head h2 .accent { color: var(--magenta); }
+    .funnel-head p { color: var(--gray); font-size: 17px; line-height: 1.55; }
+    /* Tabs selector */
+    .funnel-tabs {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px; max-width: 760px;
+      margin: 0 auto 28px; padding: 6px;
+      background: var(--lavender);
+      border-radius: 999px;
+      position: relative;
+    }
+    @media (max-width: 600px) {
+      .funnel-tabs { border-radius: var(--r-md); padding: 8px; }
+    }
+    .funnel-tab {
+      padding: 11px 20px;
+      border-radius: 999px;
+      font-size: 14px; font-weight: 700;
+      color: var(--purple-deep);
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s, transform 0.15s;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+      background: none; border: none;
+    }
+    .funnel-tab:hover { color: var(--magenta-deep); }
+    .funnel-tab.is-active {
+      background: var(--white);
+      color: var(--magenta-deep);
+      box-shadow: 0 4px 14px rgba(76,29,149,0.12);
+    }
+    .funnel-tab .tab-icon {
+      display: inline-block; margin-right: 6px;
+      font-size: 16px; line-height: 1;
+    }
+    /* Funnel stage canvas */
+    .funnel-canvas {
+      background: linear-gradient(180deg, var(--lavender) 0%, var(--white) 100%);
+      border-radius: var(--r-xl);
+      padding: 28px 16px 36px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gray-line);
+      box-shadow: 0 30px 80px rgba(76,29,149,0.08);
+    }
+    @media (min-width: 720px) { .funnel-canvas { padding: 40px 32px 48px; } }
+    /* Subtle dot grid in background */
+    .funnel-canvas::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(217,70,239,0.10) 1px, transparent 1.5px);
+      background-size: 24px 24px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    /* Funnel context above stages */
+    .funnel-context {
+      background: var(--white);
+      border-left: 4px solid var(--magenta);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin: 0 auto 32px;
+      max-width: 880px;
+      font-size: 14px;
+      color: var(--body);
+      line-height: 1.55;
+      position: relative; z-index: 1;
+    }
+    .funnel-context strong { color: var(--ink); }
+    /* The flow — vertical stack with decreasing widths */
+    .flow {
+      position: relative; z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    /* Each stage row (the wrapper) */
+    .stage-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    /* The actual stage card with funnel widths */
+    .stage {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 18px;
+      box-shadow: 0 14px 36px rgba(76,29,149,0.10);
+      position: relative;
+      width: 100%;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    /* Embudo: anchuras decrecientes en desktop */
+    @media (min-width: 920px) {
+      .stage-row.s-1 .stage { max-width: 920px; }
+      .stage-row.s-2 .stage { max-width: 810px; }
+      .stage-row.s-3 .stage { max-width: 710px; }
+      .stage-row.s-4 .stage { max-width: 620px; }
+      .stage-row.s-5 .stage { max-width: 540px; }
+      .stage {
+        flex-direction: row;
+        align-items: center;
+        padding: 24px;
+        gap: 24px;
+      }
+    }
+    @media (min-width: 720px) and (max-width: 919px) {
+      .stage-row.s-1 .stage { max-width: 100%; }
+      .stage-row.s-2 .stage { max-width: 90%; }
+      .stage-row.s-3 .stage { max-width: 80%; }
+      .stage-row.s-4 .stage { max-width: 72%; }
+      .stage-row.s-5 .stage { max-width: 64%; }
+      .stage {
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+      }
+    }
+    .stage:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(217,70,239,0.18);
+    }
+    .stage-meta {
+      flex-shrink: 0;
+      width: 100%;
+    }
+    @media (min-width: 720px) {
+      .stage-meta { width: 280px; }
+    }
+    @media (min-width: 920px) {
+      .stage-row.s-3 .stage-meta { width: 240px; }
+      .stage-row.s-4 .stage-meta { width: 220px; }
+      .stage-row.s-5 .stage-meta { width: 200px; }
+    }
+    .stage-badge-row {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .stage-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--magenta);
+      color: var(--white);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 900;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 10px rgba(217,70,239,0.35);
+    }
+    .stage-row.s-2 .stage-num { background: var(--purple-bright); box-shadow: 0 4px 10px rgba(124,58,237,0.35); }
+    .stage-row.s-3 .stage-num { background: var(--purple); box-shadow: 0 4px 10px rgba(91,33,182,0.35); }
+    .stage-row.s-4 .stage-num { background: var(--purple-deep); box-shadow: 0 4px 10px rgba(76,29,149,0.35); }
+    .stage-row.s-5 .stage-num { background: var(--green); box-shadow: 0 4px 10px rgba(22,163,74,0.4); }
+    .stage-eyebrow {
+      font-size: 11px; font-weight: 800;
+      color: var(--magenta-deep);
+      letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .stage-row.s-2 .stage-eyebrow { color: var(--purple-bright); }
+    .stage-row.s-3 .stage-eyebrow { color: var(--purple); }
+    .stage-row.s-4 .stage-eyebrow { color: var(--purple-deep); }
+    .stage-row.s-5 .stage-eyebrow { color: var(--green); }
+    /* Caída count chip */
+    .stage-count {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 9px;
+      background: var(--lavender);
+      color: var(--purple-deep);
+      border-radius: 999px;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .stage-count-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--magenta);
+      animation: countDot 2s ease-in-out infinite;
+    }
+    @keyframes countDot {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    .stage-title {
+      font-size: 20px; font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em; line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .stage-row.s-3 .stage-title,
+    .stage-row.s-4 .stage-title,
+    .stage-row.s-5 .stage-title { font-size: 18px; }
+    .stage-value {
+      font-size: 14px; color: var(--body); line-height: 1.5;
+    }
+    .stage-value strong { color: var(--ink); font-weight: 700; }
+    /* The visual mockup container */
+    .stage-visual {
+      flex-shrink: 0;
+      width: 100%;
+      height: 210px;
+      background: linear-gradient(180deg, #F9FAFB 0%, #F3F4F6 100%);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      position: relative;
+    }
+    @media (min-width: 720px) {
+      .stage-visual { width: 260px; height: 220px; }
+    }
+    @media (min-width: 920px) {
+      .stage-visual { width: 280px; height: 240px; }
+      .stage-row.s-3 .stage-visual { width: 250px; }
+      .stage-row.s-4 .stage-visual { width: 230px; }
+      .stage-row.s-5 .stage-visual { width: 220px; height: 220px; }
+    }
+    /* Vertical connector between stages */
+    .stage-connector {
+      width: 4px;
+      height: 36px;
+      position: relative;
+      margin: -2px 0;
+      z-index: 0;
+    }
+    .stage-connector::before {
+      content: ''; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--magenta) 0%, var(--purple-bright) 100%);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .stage-connector::after {
+      content: ''; position: absolute;
+      left: 50%; top: 0;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--magenta);
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(217,70,239,0.7);
+      animation: connectorDot 2s ease-in-out infinite;
+    }
+    @keyframes connectorDot {
+      0% { top: 0; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { top: calc(100% - 8px); opacity: 0; }
+    }
+    /* ─── MOCKUP DEVICE FRAMES ─── */
+    .device-frame {
+      width: 86%; height: 92%;
+      margin: 4% auto;
+      background: var(--ink);
+      border-radius: 18px;
+      padding: 6px 4px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(17,24,39,0.25);
+    }
+    .device-screen {
+      width: 100%; height: 100%;
+      background: var(--white);
+      border-radius: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+    /* ─── STAGE 1: AD FEED ─── */
+    .ad-feed {
+      width: 100%; height: 100%;
+      background: linear-gradient(180deg, #FAFAFA 0%, #F3F4F6 100%);
+      padding: 8px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .ad-card {
+      background: var(--white);
+      border: 1px solid var(--gray-line);
+      border-radius: 8px;
+      padding: 7px;
+      display: flex; flex-direction: column; gap: 5px;
+      transform-origin: center;
+      animation: adPulse 4s ease-in-out infinite;
+    }
+    @keyframes adPulse {
+      0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(217,70,239,0); transform: scale(1); }
+      75% { box-shadow: 0 0 0 4px rgba(217,70,239,0.25); transform: scale(1.02); }
+      85% { box-shadow: 0 0 0 8px rgba(217,70,239,0); transform: scale(1); }
+    }
+    .ad-card-top { display: flex; gap: 5px; align-items: center; }
+    .ad-avatar {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--magenta), var(--purple-bright));
+      flex-shrink: 0;
+    }
+    .ad-handle { font-size: 8px; font-weight: 700; color: var(--ink); }
+    .ad-tag { font-size: 7px; color: var(--gray); margin-left: auto; }
+    .ad-image {
+      width: 100%; height: 70px;
+      border-radius: 4px;
+    }
+    .ad-image.clinic { background: linear-gradient(135deg, #DBEAFE 0%, #93C5FD 50%, #3B82F6 100%); }
+    .ad-image.rural { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #F59E0B 100%); }
+    .ad-image.b2b { background: linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 50%, #6366F1 100%); }
+    .ad-headline {
+      font-size: 9px; font-weight: 800; color: var(--ink);
+      line-height: 1.25;
+    }
+    .ad-cta-mini {
+      display: inline-block; padding: 4px 8px;
+      background: var(--magenta); color: var(--white);
+      border-radius: 999px;
+      font-size: 7px; font-weight: 700;
+      align-self: flex-start;
+    }
+    /* ─── STAGE 1: Two ad formats (Image ad + Search ad) ─── */
+    .stage-row.s-1 .stage-visual {
+      background: transparent;
+      padding: 0;
+      height: auto;
+      min-height: 240px;
+      width: 100%;
+    }
+    @media (min-width: 720px) {
+      .stage-row.s-1 .stage-visual { width: 320px; min-height: 250px; }
+    }
+    @media (min-width: 920px) {
+      .stage-row.s-1 .stage-visual { width: 420px; min-height: 250px; }
+    }
+    /* Hide tap-cursor in stage 1 since we have two format cards */
+    .stage-row.s-1 .tap-cursor { display: none; }
+    .ad-formats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      height: 100%;
+      align-items: stretch;
+    }
+    @media (max-width: 460px) {
+      .ad-formats { grid-template-columns: 1fr; }
+    }
+    .ad-format {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 9px 8px 10px;
+      box-shadow: 0 8px 24px rgba(76,29,149,0.10);
+      border: 1px solid rgba(229,231,235,0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ad-format:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(217,70,239,0.18);
+    }
+    .ad-format-header {
+      display: flex; align-items: center; gap: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--gray-line);
+    }
+    .ad-format-platform-icon {
+      width: 16px; height: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .ad-format-platform-icon.ig {
+      background: linear-gradient(135deg, #FCAF45 0%, #E1306C 50%, #833AB4 100%);
+    }
+    .ad-format-platform-icon.li {
+      background: #0A66C2;
+    }
+    .ad-format-platform-icon.google {
+      background: var(--white);
+      border: 1px solid var(--gray-line);
+    }
+    .ad-format-platform-icon svg {
+      width: 10px; height: 10px;
+    }
+    .ad-format-platform-name {
+      font-size: 8px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+    .ad-format-platform-tag {
+      font-size: 6.5px;
+      color: var(--gray);
+      margin-left: auto;
+      font-weight: 600;
+    }
+    /* IG / LinkedIn-style image ad content */
+    .ad-format-image-content {
+      display: flex; flex-direction: column; gap: 5px;
+      flex: 1;
+      padding: 2px;
+      border-radius: 6px;
+      animation: adFormatPulse 4s ease-in-out infinite;
+    }
+    @keyframes adFormatPulse {
+      0%, 70%, 100% { box-shadow: 0 0 0 0 rgba(217,70,239,0); }
+      75% { box-shadow: 0 0 0 3px rgba(217,70,239,0.18); }
+      85% { box-shadow: 0 0 0 6px rgba(217,70,239,0); }
+    }
+    .ad-format-author {
+      display: flex; align-items: center; gap: 5px;
+    }
+    .ad-format-avatar {
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--magenta), var(--purple-bright));
+      flex-shrink: 0;
+    }
+    .ad-format-avatar.li-avatar {
+      background: linear-gradient(135deg, #0A66C2, #004182);
+      border-radius: 4px;
+    }
+    .ad-format-handle {
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .ad-format-image {
+      width: 100%; height: 56px;
+      border-radius: 4px;
+    }
+    .ad-format-image.clinic { background: linear-gradient(135deg, #DBEAFE 0%, #93C5FD 50%, #3B82F6 100%); }
+    .ad-format-image.rural { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 50%, #F59E0B 100%); }
+    .ad-format-image.b2b { background: linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 50%, #6366F1 100%); }
+    .ad-format-image.ecom { background: linear-gradient(135deg, #FCE7F3 0%, #F9A8D4 50%, #EC4899 100%); }
+    .ad-format-headline {
+      font-size: 8px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+    .ad-format-cta {
+      display: inline-block;
+      padding: 3px 7px;
+      background: var(--magenta);
+      color: var(--white);
+      border-radius: 999px;
+      font-size: 7px;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+    /* Google search ad content */
+    .ad-format-search-content {
+      display: flex; flex-direction: column; gap: 5px;
+      flex: 1;
+    }
+    .ad-search-bar {
+      background: var(--off-white);
+      border: 1px solid var(--gray-line);
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-size: 7px;
+      color: var(--gray);
+      display: flex; align-items: center; gap: 4px;
+      font-weight: 500;
+    }
+    .ad-search-bar svg {
+      width: 7px; height: 7px;
+      stroke: var(--gray); stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .ad-search-result {
+      background: var(--white);
+      padding: 5px 6px;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      animation: searchHighlight 4s ease-in-out infinite;
+    }
+    @keyframes searchHighlight {
+      0%, 60%, 100% {
+        background: var(--white);
+        border-left-color: transparent;
+      }
+      70%, 85% {
+        background: rgba(217,70,239,0.07);
+        border-left-color: var(--magenta);
+      }
+    }
+    .ad-search-tag {
+      font-size: 6.5px;
+      color: var(--gray);
+      margin-bottom: 2px;
+    }
+    .ad-search-tag-label {
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .ad-search-title {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: #1a0dab;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .ad-search-desc {
+      font-size: 6.5px;
+      color: var(--body);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+    .ad-search-rating {
+      font-size: 7px;
+      color: #fbbf24;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .ad-search-rating-num {
+      color: var(--gray);
+      font-weight: 500;
+      margin-left: 4px;
+      letter-spacing: 0;
+    }
+    /* Tap cursor */
+    .tap-cursor {
+      position: absolute;
+      bottom: 16px; right: 14px;
+      width: 24px; height: 24px;
+      z-index: 5;
+      opacity: 0;
+      animation: tapSequence 4s ease-in-out infinite;
+    }
+    .tap-cursor::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111827'%3E%3Cpath d='M5.5 3.5l4.5 13 2-5 5-2L5.5 3.5z' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+    .tap-cursor::after {
+      content: ''; position: absolute;
+      top: -4px; right: -4px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--magenta);
+      opacity: 0;
+      animation: tapRipple 4s ease-out infinite;
+    }
+    @keyframes tapSequence {
+      0%, 50% { opacity: 0; transform: translate(8px, 8px); }
+      55% { opacity: 1; transform: translate(0, 0); }
+      75% { opacity: 1; transform: translate(0, 0) scale(0.85); }
+      85% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(0, 0); }
+    }
+    @keyframes tapRipple {
+      0%, 70% { opacity: 0; transform: scale(0.5); }
+      78% { opacity: 0.8; transform: scale(0.8); }
+      88% { opacity: 0; transform: scale(2.4); }
+      100% { opacity: 0; transform: scale(2.4); }
+    }
+    /* ─── STAGE 2: LANDING SCROLL ─── */
+    .landing-screen {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .landing-content {
+      width: 100%;
+      animation: landingScroll 6s ease-in-out infinite;
+    }
+    @keyframes landingScroll {
+      0%, 18% { transform: translateY(0); }
+      50%, 70% { transform: translateY(-52%); }
+      92%, 100% { transform: translateY(0); }
+    }
+    .landing-nav {
+      padding: 6px 9px;
+      display: flex; justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--gray-line);
+    }
+    .landing-logo { font-size: 8px; font-weight: 900; color: var(--purple-deep); }
+    .landing-burger {
+      width: 11px; height: 8px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .landing-burger span { display: block; height: 1px; background: var(--gray); }
+    .landing-hero {
+      padding: 14px 10px 12px;
+      text-align: center;
+    }
+    .landing-hero-eyebrow {
+      font-size: 6px; color: var(--magenta-deep); font-weight: 800;
+      letter-spacing: 0.1em; margin-bottom: 5px;
+    }
+    .landing-hero-title {
+      font-size: 11px; font-weight: 900; color: var(--ink);
+      line-height: 1.05; margin-bottom: 5px;
+    }
+    .landing-hero-sub {
+      font-size: 7px; color: var(--gray); line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .landing-hero-cta {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--magenta); color: var(--white);
+      border-radius: 999px;
+      font-size: 7px; font-weight: 700;
+    }
+    .landing-trust {
+      display: flex; justify-content: center;
+      gap: 10px;
+      padding: 8px;
+      border-top: 1px solid var(--gray-line);
+      font-size: 6px;
+      color: var(--gray); font-weight: 600;
+    }
+    .landing-actions {
+      padding: 10px 10px 11px;
+      background: var(--lavender);
+      display: flex; flex-direction: column;
+      gap: 5px;
+    }
+    .landing-actions-title {
+      font-size: 7.5px; font-weight: 800;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 3px;
+    }
+    .landing-action-btn {
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px;
+      padding: 6px 6px;
+      border-radius: 5px;
+      font-size: 7.5px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      position: relative;
+    }
+    .landing-action-btn.primary {
+      background: var(--magenta);
+      color: var(--white);
+      box-shadow: 0 2px 6px rgba(217,70,239,0.35);
+      animation: actionPulsePrimary 4s ease-in-out infinite;
+    }
+    @keyframes actionPulsePrimary {
+      0%, 70%, 100% { box-shadow: 0 2px 6px rgba(217,70,239,0.35); }
+      78% { box-shadow: 0 2px 6px rgba(217,70,239,0.35), 0 0 0 3px rgba(217,70,239,0.2); }
+      88% { box-shadow: 0 2px 6px rgba(217,70,239,0.35), 0 0 0 6px rgba(217,70,239,0); }
+    }
+    .landing-action-btn.wa {
+      background: var(--wa-green);
+      color: var(--white);
+      box-shadow: 0 2px 6px rgba(37,211,102,0.3);
+      animation: actionPulseWa 4s ease-in-out infinite 2s;
+    }
+    @keyframes actionPulseWa {
+      0%, 70%, 100% { box-shadow: 0 2px 6px rgba(37,211,102,0.3); }
+      78% { box-shadow: 0 2px 6px rgba(37,211,102,0.3), 0 0 0 3px rgba(37,211,102,0.18); }
+      88% { box-shadow: 0 2px 6px rgba(37,211,102,0.3), 0 0 0 6px rgba(37,211,102,0); }
+    }
+    .landing-action-btn svg {
+      width: 8px; height: 8px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .landing-action-or {
+      text-align: center;
+      font-size: 6px;
+      color: var(--gray);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 1px 0;
+    }
+    /* ─── STAGE 3: FORM TYPING ─── */
+    .form-fill-screen {
+      width: 100%; height: 100%;
+      padding: 10px 12px;
+      background: var(--white);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .form-fill-header {
+      font-size: 9px; font-weight: 800; color: var(--ink);
+      margin-bottom: 9px;
+    }
+    .form-fill-field {
+      background: var(--off-white);
+      border: 1px solid var(--gray-line);
+      border-radius: 5px;
+      padding: 6px 8px;
+      margin-bottom: 6px;
+      font-size: 8px;
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+      min-height: 20px;
+    }
+    .form-fill-field .typed {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: bottom;
+    }
+    .form-fill-field.field-1 .typed {
+      animation: typeText1 5s steps(12, end) infinite;
+      max-width: 0;
+    }
+    .form-fill-field.field-2 .typed {
+      animation: typeText2 5s steps(18, end) infinite;
+      max-width: 0;
+    }
+    .form-fill-field.field-3 .typed {
+      animation: typeText3 5s steps(11, end) infinite;
+      max-width: 0;
+    }
+    @keyframes typeText1 {
+      0%, 10% { max-width: 0; }
+      28% { max-width: 100%; }
+      85% { max-width: 100%; }
+      95%, 100% { max-width: 0; }
+    }
+    @keyframes typeText2 {
+      0%, 28% { max-width: 0; }
+      45% { max-width: 100%; }
+      85% { max-width: 100%; }
+      95%, 100% { max-width: 0; }
+    }
+    @keyframes typeText3 {
+      0%, 45% { max-width: 0; }
+      62% { max-width: 100%; }
+      85% { max-width: 100%; }
+      95%, 100% { max-width: 0; }
+    }
+    .form-fill-submit {
+      background: var(--magenta);
+      color: var(--white);
+      text-align: center;
+      padding: 7px;
+      border-radius: 5px;
+      font-size: 8px; font-weight: 700;
+      margin-top: 6px;
+      animation: submitFlash 5s ease-in-out infinite;
+    }
+    @keyframes submitFlash {
+      0%, 70% { background: var(--magenta); transform: scale(1); }
+      75% { background: var(--magenta-deep); transform: scale(1.04); box-shadow: 0 0 0 4px rgba(217,70,239,0.2); }
+      85% { background: var(--green); transform: scale(1); }
+      100% { background: var(--magenta); transform: scale(1); }
+    }
+    /* ─── STAGE 4: CHATBOT WHATSAPP ─── */
+    .chat-screen {
+      width: 100%; height: 100%;
+      background: #E5DDD5;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.35) 0.5px, transparent 1px),
+        radial-gradient(circle, rgba(0,0,0,0.06) 0.5px, transparent 1px);
+      background-size: 10px 10px, 14px 14px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .chat-header {
+      background: var(--wa-dark);
+      color: var(--white);
+      padding: 6px 8px;
+      display: flex; align-items: center; gap: 6px;
+      flex-shrink: 0;
+    }
+    .chat-avatar {
+      width: 18px; height: 18px;
+      background: var(--white);
+      color: var(--wa-dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 900;
+      flex-shrink: 0;
+    }
+    .chat-header-info { flex: 1; min-width: 0; }
+    .chat-header-name { font-size: 8px; font-weight: 700; line-height: 1.1; }
+    .chat-header-status {
+      font-size: 6px; opacity: 0.8;
+      display: inline-flex; align-items: center; gap: 3px;
+    }
+    .chat-status-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: #4ade80;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 6px 8px;
+      display: flex; flex-direction: column;
+      gap: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+    .chat-bubble {
+      max-width: 78%;
+      padding: 5px 8px;
+      border-radius: 8px;
+      font-size: 7.5px;
+      line-height: 1.35;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: bubbleAppear 8s ease-out infinite;
+    }
+    .chat-bubble.bot {
+      background: var(--white);
+      color: var(--ink);
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-bubble.user {
+      background: #DCF8C6;
+      color: var(--ink);
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .chat-bubble.b1 { animation-delay: 0.3s; }
+    .chat-bubble.b2 { animation-delay: 1.5s; }
+    .chat-bubble.b3 { animation-delay: 3.0s; }
+    .chat-bubble.b4 { animation-delay: 4.5s; }
+    .chat-bubble.b5 { animation-delay: 6.0s; }
+    @keyframes bubbleAppear {
+      0% { opacity: 0; transform: translateY(8px) scale(0.95); }
+      4% { opacity: 1; transform: translateY(0) scale(1); }
+      88% { opacity: 1; transform: translateY(0) scale(1); }
+      96%, 100% { opacity: 0; transform: translateY(0) scale(1); }
+    }
+    .chat-bubble.success {
+      background: linear-gradient(135deg, #DCF8C6 0%, #B8E6A6 100%);
+      font-weight: 800;
+    }
+    .chat-bubble.success::before {
+      content: '✓ ';
+      color: var(--green);
+      font-weight: 900;
+      font-size: 9px;
+    }
+    .chat-time {
+      font-size: 5.5px;
+      opacity: 0.6;
+      text-align: right;
+      margin-top: 2px;
+    }
+    /* ─── STAGE 5: VENTA CERRADA ─── */
+    .sale-screen {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #4C1D95 0%, #16a34a 100%);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sale-screen::before {
+      content: ''; position: absolute;
+      width: 110px; height: 110px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      opacity: 0;
+      animation: successRing 3s ease-out infinite;
+    }
+    .sale-screen::after {
+      content: ''; position: absolute;
+      width: 110px; height: 110px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      opacity: 0;
+      animation: successRing 3s ease-out infinite 1.2s;
+    }
+    @keyframes successRing {
+      0% { transform: scale(0.5); opacity: 0.7; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+    .sale-check {
+      width: 50px; height: 50px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+      z-index: 2;
+      animation: checkBounce 3s ease-in-out infinite;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    @keyframes checkBounce {
+      0%, 60%, 100% { transform: scale(1); }
+      70% { transform: scale(0.85); }
+      80% { transform: scale(1.15); }
+    }
+    .sale-check svg {
+      width: 30px; height: 30px;
+      stroke: var(--green);
+      stroke-width: 4;
+      fill: none;
+      stroke-linecap: round; stroke-linejoin: round;
+      stroke-dasharray: 30;
+      animation: checkDraw 3s ease-in-out infinite;
+    }
+    @keyframes checkDraw {
+      0%, 60% { stroke-dashoffset: 30; }
+      78% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .sale-title {
+      font-size: 13px; font-weight: 900;
+      color: var(--white); letter-spacing: -0.02em;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 2;
+      text-align: center;
+    }
+    .sale-detail {
+      font-size: 9px; font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      margin-top: 4px;
+      z-index: 2;
+      text-align: center;
+    }
+    .sale-kpi {
+      margin-top: 14px;
+      padding: 5px 12px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 999px;
+      font-size: 8px; font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      z-index: 2;
+    }
+    /* Funnel-pane visibility */
+    .funnel-pane { display: none; }
+    .funnel-pane.is-active { display: block; }
+    /* ═══ VALUE SUMMARY BLOCK ═══ */
+    .value-summary {
+      margin-top: 56px;
+      background: linear-gradient(135deg, var(--ink) 0%, var(--purple-deep) 100%);
+      border-radius: var(--r-xl);
+      padding: 44px 28px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 720px) { .value-summary { padding: 56px 64px; } }
+    .value-summary::before {
+      content: ''; position: absolute;
+      top: -30%; right: -10%; width: 50%; height: 100%;
+      background: radial-gradient(circle, rgba(217,70,239,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .value-summary-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 800;
+      color: var(--magenta-hot);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .value-summary-eyebrow::before {
+      content: ''; width: 8px; height: 8px;
+      background: var(--magenta-hot); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .value-summary h3 {
+      font-size: clamp(24px, 4vw, 38px);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 26px;
+      position: relative;
+      max-width: 760px;
+    }
+    .value-summary h3 .accent { color: var(--magenta-hot); }
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    @media (min-width: 720px) { .value-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 28px; } }
+    @media (min-width: 1000px) { .value-grid { grid-template-columns: repeat(4, 1fr); } }
+    .value-item {
+      display: flex; gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      border-radius: var(--r-md);
+      border-left: 3px solid var(--magenta-hot);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .value-item:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+    .value-icon {
+      width: 36px; height: 36px;
+      background: rgba(217,70,239,0.2);
+      border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .value-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--magenta-hot);
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .value-text { min-width: 0; }
+    .value-title {
+      font-size: 14px; font-weight: 800;
+      color: var(--white);
+      display: block; margin-bottom: 3px;
+      letter-spacing: -0.01em;
+    }
+    .value-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.45;
+    }
+    .value-summary-cta {
+      font-size: 16px; font-weight: 700;
+      color: var(--white);
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      max-width: 760px;
+      position: relative;
+    }
+    .value-summary-cta strong {
+      color: var(--magenta-hot);
+      font-weight: 800;
+    }
+    /* ─── Tracking block (dentro del value-summary) ─── */
+    .tracking-block {
+      margin-top: 32px;
+      padding: 28px 22px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+    }
+    @media (min-width: 720px) {
+      .tracking-block {
+        grid-template-columns: 280px 1fr;
+        gap: 36px;
+        padding: 32px 36px;
+      }
+    }
+    @media (min-width: 1000px) {
+      .tracking-block { grid-template-columns: 320px 1fr; }
+    }
+    .tracking-eyebrow {
+      position: absolute;
+      top: -12px; left: 24px;
+      background: var(--magenta);
+      color: var(--white);
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(217,70,239,0.4);
+    }
+    /* Dashboard mockup */
+    .tracking-dashboard {
+      background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: var(--r-md);
+      padding: 18px 18px 14px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .tracking-dashboard-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .tracking-dashboard-title {
+      font-size: 11px; font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .tracking-dashboard-month {
+      font-size: 9px; font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .tracking-dashboard-live {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 9px; font-weight: 700;
+      color: #4ade80;
+    }
+    .tracking-dashboard-live::before {
+      content: ''; width: 6px; height: 6px;
+      background: #4ade80; border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .tracking-stat {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tracking-stat:last-child { border-bottom: none; }
+    .tracking-stat-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; color: rgba(255,255,255,0.7);
+      font-weight: 600;
+    }
+    .tracking-stat-icon {
+      width: 22px; height: 22px;
+      background: rgba(217,70,239,0.15);
+      border-radius: 6px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .tracking-stat-icon svg {
+      width: 12px; height: 12px;
+      stroke: var(--magenta-hot);
+      fill: none; stroke-width: 2.2;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .tracking-stat-value {
+      font-size: 16px; font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .tracking-stat.highlight { padding-top: 14px; margin-top: 4px; }
+    .tracking-stat.highlight .tracking-stat-value {
+      font-size: 24px;
+      background: linear-gradient(135deg, var(--magenta-hot), #4ade80);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tracking-stat.highlight .tracking-stat-icon {
+      background: rgba(74,222,128,0.15);
+    }
+    .tracking-stat.highlight .tracking-stat-icon svg {
+      stroke: #4ade80;
+    }
+    .tracking-stat-trend {
+      display: inline-block;
+      font-size: 9px; font-weight: 700;
+      color: #4ade80;
+      margin-left: 6px;
+    }
+    /* Dashboard appears with subtle animation */
+    .tracking-stat-value {
+      animation: countUp 0.6s ease-out backwards;
+    }
+    .tracking-stat:nth-child(2) .tracking-stat-value { animation-delay: 0.1s; }
+    .tracking-stat:nth-child(3) .tracking-stat-value { animation-delay: 0.2s; }
+    .tracking-stat:nth-child(4) .tracking-stat-value { animation-delay: 0.3s; }
+    .tracking-stat:nth-child(5) .tracking-stat-value { animation-delay: 0.4s; }
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Tracking text */
+    .tracking-text { color: rgba(255,255,255,0.85); }
+    .tracking-text h4 {
+      font-size: clamp(20px, 3vw, 26px);
+      color: var(--white); font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .tracking-text h4 .accent { color: var(--magenta-hot); }
+    .tracking-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .tracking-text p:last-child { margin-bottom: 0; }
+    .tracking-text strong { color: var(--white); font-weight: 700; }
+    .tracking-pills {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 18px;
+    }
+    .tracking-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 11px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      font-size: 11px; font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: -0.01em;
+    }
+    .tracking-pill::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--magenta-hot); border-radius: 50%;
+    }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .ad-card, .tap-cursor, .tap-cursor::after,
+      .landing-content, .form-fill-field .typed,
+      .form-fill-submit, .chat-bubble,
+      .sale-screen::before, .sale-screen::after,
+      .sale-check, .sale-check svg,
+      .stage-connector::after, .stage-count-dot {
+        animation: none !important;
+      }
+      .tap-cursor { opacity: 1; }
+      .form-fill-field .typed { max-width: 100% !important; }
+      .chat-bubble { opacity: 1; }
+    }
+    /* ═══ METODO ═══ */
+    .metodo { padding: 80px 0; background: var(--lavender); }
+    .metodo-head { text-align: center; max-width: 760px; margin: 0 auto 48px; }
+    .metodo-head h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .metodo-head h2 .accent { color: var(--magenta); }
+    .metodo-head p { color: var(--gray); font-size: 17px; line-height: 1.55; }
+    .metodo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px; margin-bottom: 48px;
+    }
+    @media (min-width: 720px) { .metodo-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .metodo-grid { grid-template-columns: repeat(4, 1fr); } }
+    .metodo-paso {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 24px;
+      border-top: 4px solid var(--magenta);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .metodo-paso:nth-child(2) { border-top-color: var(--purple-bright); }
+    .metodo-paso:nth-child(3) { border-top-color: var(--purple); }
+    .metodo-paso:nth-child(4) { border-top-color: var(--purple-deep); }
+    .metodo-paso:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(76,29,149,0.1);
+    }
+    .metodo-num {
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      background: var(--magenta); color: var(--white);
+      border-radius: 10px;
+      font-weight: 900; font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .metodo-paso:nth-child(2) .metodo-num { background: var(--purple-bright); }
+    .metodo-paso:nth-child(3) .metodo-num { background: var(--purple); }
+    .metodo-paso:nth-child(4) .metodo-num { background: var(--purple-deep); }
+    .metodo-tiempo {
+      font-size: 11px; font-weight: 800;
+      color: var(--magenta-deep);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .metodo-paso h3 {
+      font-size: 20px; margin-bottom: 8px; color: var(--ink);
+    }
+    .metodo-paso p {
+      font-size: 14px; color: var(--gray); line-height: 1.55;
+    }
+    .anti-promesas {
+      background: var(--ink); color: var(--white);
+      border-radius: var(--r-xl);
+      padding: 36px 28px;
+      max-width: 920px; margin: 0 auto;
+    }
+    @media (min-width: 720px) { .anti-promesas { padding: 48px 56px; } }
+    .anti-promesas-head {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 24px;
+    }
+    /* ═══ FICHA BRIDGE ═══ */
+    .ficha-bridge-section { padding: 64px 0 0; background: var(--white); }
+    .ficha-bridge {
+      max-width: 880px; margin: 0 auto;
+      background: linear-gradient(120deg, var(--lavender) 0%, #FDF4FF 100%);
+      border: 1.5px solid rgba(217,70,239,0.2);
+      border-radius: 24px;
+      padding: 36px 32px;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 22px;
+    }
+    .ficha-bridge-text { flex: 1 1 380px; }
+    .ficha-bridge-text h3 {
+      font-size: clamp(21px, 4vw, 26px);
+      font-weight: 900; letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .ficha-bridge-text h3 .accent { color: var(--magenta-deep); }
+    .ficha-bridge-text p {
+      color: var(--body); font-size: 16px; line-height: 1.55;
+    }
+    .ficha-bridge-text p strong { color: var(--ink); }
+    .ficha-bridge-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white);
+      border: 2px solid var(--magenta);
+      color: var(--magenta-deep);
+      padding: 15px 26px; border-radius: 999px;
+      font-weight: 800; font-size: 16px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .ficha-bridge-cta:hover { background: var(--magenta); color: var(--white); }
+    .anti-promesas-eyebrow {
+      font-size: 11px; font-weight: 800;
+      color: var(--magenta-hot);
+      letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .anti-promesas h3 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      color: var(--white); line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .anti-promesas-lead {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px; margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    .anti-lista {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 720px) { .anti-lista { grid-template-columns: repeat(2, 1fr); gap: 14px 28px; } }
+    .anti-lista li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--r-md);
+      border-left: 3px solid var(--magenta);
+    }
+    .anti-lista li::before {
+      content: '×';
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      background: rgba(217,70,239,0.2);
+      color: var(--magenta-hot);
+      border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; line-height: 1;
+    }
+    .anti-lista-titulo {
+      font-size: 15px; font-weight: 800;
+      color: var(--white);
+      display: block; margin-bottom: 2px;
+    }
+    .anti-lista-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+    /* ═══ FORM SECTION ═══ */
+    .form-section {
+      padding: 80px 0 100px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--lavender) 100%);
+    }
+    .form-section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .form-section-head h2 {
+      font-size: clamp(32px, 5.5vw, 56px);
+      line-height: 1.02; margin-bottom: 14px;
+    }
+    .form-section-head h2 .accent { color: var(--magenta); }
+    .form-section-head p { color: var(--gray); font-size: 17px; }
+    .form-bottom-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 36px; align-items: start;
+    }
+    @media (min-width: 920px) {
+      .form-bottom-grid { grid-template-columns: 1fr 1.05fr; gap: 56px; }
+    }
+    .next-steps h3 { font-size: 22px; margin-bottom: 8px; }
+    .next-steps > p {
+      color: var(--gray); font-size: 15px; margin-bottom: 28px;
+    }
+    .next-list { display: flex; flex-direction: column; gap: 18px; }
+    .next-item { display: flex; gap: 16px; align-items: flex-start; }
+    .next-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--ink); color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 14px;
+    }
+    .next-item:nth-child(2) .next-num { background: var(--purple-deep); }
+    .next-item:nth-child(3) .next-num { background: var(--magenta); }
+    .next-body { padding-top: 4px; }
+    .next-body strong {
+      font-size: 16px; font-weight: 800; color: var(--ink);
+      display: block; margin-bottom: 4px;
+    }
+    .next-body span { font-size: 14px; color: var(--gray); line-height: 1.55; }
+    .next-callout {
+      margin-top: 28px; padding: 18px 20px;
+      background: var(--white);
+      border-radius: var(--r-md);
+      border-left: 4px solid var(--green);
+      font-size: 14px; color: var(--body); line-height: 1.55;
+    }
+    .next-callout strong { color: var(--ink); }
+    .form-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 32px 24px;
+      border-top: 5px solid var(--magenta);
+      box-shadow: 0 20px 60px rgba(76,29,149,0.12), 0 4px 14px rgba(0,0,0,0.04);
+      position: relative;
+    }
+    @media (min-width: 720px) { .form-card { padding: 44px 40px; } }
+    .form-badge {
+      position: absolute;
+      top: -16px; right: 18px;
+      background: var(--green); color: var(--white);
+      padding: 8px 14px; border-radius: 999px;
+      font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 16px rgba(22,163,74,0.3);
+    }
+    .form-card h3 { font-size: 24px; margin-bottom: 6px; padding-right: 110px; }
+    .form-card .form-sub { font-size: 14px; color: var(--gray); margin-bottom: 24px; }
+    .form-fields { display: flex; flex-direction: column; gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field label { font-size: 12px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+    .field label .req { color: var(--magenta); }
+    .field input, .field textarea, .field select {
+      width: 100%; padding: 14px;
+      font-size: 15px; font-family: inherit;
+      color: var(--ink); background: var(--off-white);
+      border: 1.5px solid var(--gray-line);
+      border-radius: 10px;
+      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus {
+      outline: none;
+      border-color: var(--magenta);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(217,70,239,0.12);
+    }
+    .field textarea { min-height: 90px; resize: vertical; line-height: 1.5; }
+    .legal {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 12px; color: var(--gray); line-height: 1.5;
+    }
+    .legal input { margin-top: 3px; cursor: pointer; flex-shrink: 0; }
+    .legal a { color: var(--purple); text-decoration: underline; }
+    .form-submit-btn { margin-top: 8px; }
+    .form-divider {
+      display: flex; align-items: center; gap: 10px;
+      margin: 14px 0;
+      color: var(--gray); font-size: 11px;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+    }
+    .form-divider::before, .form-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--gray-line);
+    }
+    .wa-btn {
+      width: 100%;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px;
+      background: var(--wa-green); color: var(--white);
+      font-weight: 700; font-size: 15px;
+      border-radius: 10px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .wa-btn:hover { background: var(--wa-dark); transform: translateY(-1px); }
+    .wa-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .form-success, .form-error {
+      display: none;
+      padding: 14px 16px; border-radius: 10px;
+      margin-top: 14px;
+      font-weight: 600; font-size: 14px;
+    }
+    .form-success { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .form-error { background: #FEF2F2; color: #991B1B; border: 1px solid #FECACA; }
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: #0A0612;
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 48px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      margin-bottom: 32px; text-align: center;
+    }
+    @media (min-width: 720px) {
+      .footer-grid {
+        grid-template-columns: 1fr auto auto;
+        gap: 48px; text-align: left; align-items: center;
+      }
+    }
+    footer .logo { color: var(--white); font-size: 26px; }
+    footer .logo span { color: var(--magenta); }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 12px; color: rgba(255,255,255,0.5);
+    }
+    /* ═══ REVEALS ═══ */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-
-<nav class="nav">
-  <a class="nav-logo" href="index.html">GOGOA<span>.</span></a>
-  <a class="nav-wa js-wa" target="_blank" rel="noopener" href="https://wa.me/34618792084?text=Hola%2C%20quiero%20la%20ficha%20de%20Google%20para%20mi%20negocio">
-    <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-    Escríbenos
-  </a>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-eyebrow">Ficha de Google · Pago único</div>
-    <h1>Que te encuentren<br>en <span class="mag">Google Maps</span><br>cuando te buscan.</h1>
-    <p class="hero-sub">Te montamos la ficha de tu negocio en Google, <strong>completa y verificada</strong>, para que salgas cuando alguien de tu zona busca lo que tú haces. Sin cuotas. Sin líos.</p>
-
-    <div class="maps-mock" aria-hidden="true">
-      <div class="mock-search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <span><span class="trade" id="trade">desbroces</span> cerca de mí</span>
-      </div>
-      <div class="mock-map"><div class="mock-pin"></div></div>
-      <div class="mock-card">
-        <div class="mock-name" id="bizname">Tu negocio</div>
-        <div class="mock-rating"><span class="stars">★★★★★</span> 4,9 · Abierto ahora</div>
-        <div class="mock-actions">
-          <div class="mock-btn call">📞 Llamar</div>
-          <div class="mock-btn">Cómo llegar</div>
+  <!-- ═══ NAV — Solo WhatsApp ═══ -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">GOGOA<span>.</span></a>
+      <a href="https://wa.me/34618792084?text=Hola%20Gogoa%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20info" class="btn btn-wa-strong nav-wa-pulse" target="_blank" rel="noopener" id="navWaCta">
+        <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+        ¿Hablamos?
+      </a>
+    </div>
+  </nav>
+  <!-- ═══ HERO — sin botones, solo mensaje ═══ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">EMBUDO DE VENTAS AUTOMATIZADO</div>
+        <h1 class="hero-headline">
+          <span class="line">Atraemos.</span>
+          <span class="line">Convertimos.</span>
+          <span class="line magenta">Vendemos.</span>
+        </h1>
+        <p class="hero-sub">
+          El sistema que trae clientes a tu negocio mientras tú haces lo tuyo.
+          Para <strong>restaurantes, casas rurales, clínicas y tiendas</strong> — PYMES como la tuya.
+        </p>
+        <div class="micro-trust">
+          <span class="micro-trust-item">Diagnóstico gratis</span>
+          <span class="micro-trust-item">Sin permanencia</span>
+          <span class="micro-trust-item">Respuesta en 24h</span>
+          <span class="micro-trust-item">Sin compromiso</span>
         </div>
       </div>
     </div>
-    <p class="mock-caption" style="margin: -14px 0 26px;">Así te verá quien te busque. Con tu teléfono, para que te llamen directo.</p>
-
-    <a class="cta-wa js-wa" target="_blank" rel="noopener" href="https://wa.me/34618792084?text=Hola%2C%20quiero%20la%20ficha%20de%20Google%20para%20mi%20negocio">
-      <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-      Quiero mi ficha · 150€
-    </a>
-    <div class="cta-note">Nos escribes por WhatsApp y te contestamos hoy.</div>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <div class="dato">
-      <div class="dato-num">1 de cada <span>3</span></div>
-      <div class="dato-text">negocios en España <strong>no aparece en Google Maps</strong>. Y mientras tanto, los que sí están se llevan las llamadas de tu zona.</div>
-      <div class="dato-foot">Una ficha completa recibe hasta 5 veces más llamadas que una incompleta.</div>
+  </section>
+  <!-- ═══ SECTORES (chips) ═══ -->
+  <section class="sectors-section">
+    <div class="container">
+      <div class="sectors-head reveal">
+        <h2>Trabajamos con negocios <span class="accent">como el tuyo</span>.</h2>
+        <p>Sectores para los que está pensado el sistema.</p>
+      </div>
+      <p class="sectors-list reveal">
+        Hostelería <span class="sep">·</span>
+        Casas rurales <span class="sep">·</span>
+        Clínicas y salud <span class="sep">·</span>
+        Comercio local <span class="sep">·</span>
+        E-commerce <span class="sep">·</span>
+        Belleza y estética <span class="sep">·</span>
+        Servicios profesionales <span class="sep">·</span>
+        Inmobiliaria <span class="sep">·</span>
+        Educación <span class="sep">·</span>
+        Moda <span class="sep">·</span>
+        Fitness <span class="sep">·</span>
+        SaaS y B2B
+      </p>
     </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2 class="sec-title">Qué te <span class="mag">montamos</span></h2>
-    <p class="sec-sub">Todo lo que hace falta para que tu ficha trabaje por ti. Tú sigues a lo tuyo.</p>
-    <ul class="incluye">
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Tu ficha creada y verificada</strong> — el trámite con Google lo llevamos nosotros de principio a fin.</span></li>
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Tus servicios y tu zona de trabajo</strong> bien puestos, con las palabras que usa la gente para buscar.</span></li>
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Tus fotos y tu teléfono</strong> — para que llamen directo o te escriban por WhatsApp.</span></li>
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Horarios, descripción y categorías</strong> optimizados para salir lo más arriba posible.</span></li>
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Un sistema fácil para pedir reseñas</strong> a tus clientes — un enlace que les mandas y listo. Las reseñas son lo que más te sube.</span></li>
-      <li><span class="check"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span><strong>Y te lo dejamos explicado</strong> para que puedas tocarlo tú si quieres. La ficha es tuya para siempre.</span></li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec-title">Cómo <span class="mag">funciona</span></h2>
-    <div class="pasos">
-      <div class="paso">
-        <div class="paso-num">1</div>
-        <div class="paso-body"><strong>Nos escribes por WhatsApp</strong><p>Nos cuentas qué haces y de qué zona eres. Te contestamos hoy mismo.</p></div>
+  </section>
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how">
+    <div class="container">
+      <div class="how-head reveal">
+        <h2>Tu embudo, <span class="accent">funcionando solo</span>.</h2>
+        <p>Tres piezas que trabajan juntas para que el sistema atraiga, capture y venda mientras tú te ocupas del negocio.</p>
       </div>
-      <div class="paso">
-        <div class="paso-num">2</div>
-        <div class="paso-body"><strong>Pagas la mitad y arrancamos</strong><p>75€ para empezar. Nos pasas tus datos y tus fotos, y montamos la ficha.</p></div>
-      </div>
-      <div class="paso">
-        <div class="paso-num">3</div>
-        <div class="paso-body"><strong>Google verifica tu negocio</strong><p>Te manda un código (normalmente por carta, tarda unos días). Lo metemos y tu ficha queda activa.</p></div>
-      </div>
-      <div class="paso">
-        <div class="paso-num">4</div>
-        <div class="paso-body"><strong>La ves funcionando — y pagas el resto</strong><p>Cuando busques tu negocio en Google y lo veas con tus propios ojos, pagas los otros 75€. Si no la ves, no pagas.</p></div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Atraemos</h3>
+          <p>Anuncios en Instagram, Facebook y Google que llegan a la gente que ya busca lo que ofreces. Pagas solo por quienes muestran interés real.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Convertimos</h3>
+          <p>Web y formularios diseñados para capturar a los interesados. Cada visita tiene un camino claro: contactarte o reservar contigo.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Vendemos</h3>
+          <p>Emails y WhatsApp automatizados que acompañan al cliente hasta la compra. Tú solo atiendes a quien ya decidió comprar.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2 class="sec-title">Precio <span class="mag">claro</span></h2>
-    <div class="precio-card">
-      <div class="precio-tag">Pago único · Sin cuotas</div>
-      <div class="precio-num">150€ <small>+ IVA</small></div>
-      <div class="precio-iva">181,50€ con IVA · con factura, como debe ser</div>
-      <div class="precio-split"><strong>En dos partes:</strong> 75€ para empezar y 75€ cuando veas tu ficha funcionando en Google. Así el riesgo lo compartimos.</div>
-      <div class="precio-cero">Después no pagas <strong>nada más</strong>. Ni mensualidades, ni permanencia, ni sorpresas. La ficha es tuya.</div>
+  </section>
+  <!-- ═══ FICHA BRIDGE ═══ -->
+  <section class="ficha-bridge-section">
+    <div class="container">
+      <div class="ficha-bridge reveal">
+        <div class="ficha-bridge-text">
+          <h3>¿Solo necesitas salir en <span class="accent">Google Maps</span>?</h3>
+          <p>Te montamos la ficha de Google de tu negocio, completa y verificada, por <strong>150€, pago único, sin cuotas</strong>. Y si lo que buscas es el sistema completo de captación, sigue bajando — te lo enseñamos paso a paso.</p>
+        </div>
+        <a class="ficha-bridge-cta" href="ficha-google.html" onclick="if(typeof gtag!=='undefined')gtag('event','ficha_bridge_click',{event_category:'navigation'});">
+          Ver cómo funciona →
+        </a>
+      </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec-title">Las <span class="mag">verdades</span> que otros no te cuentan</h2>
-    <p class="sec-sub">Preferimos decírtelas antes de que pagues, no después.</p>
-    <div class="verdades">
-      <div class="verdad"><strong>Estar en Google Maps es gratis.</strong><p>Puedes hacerlo tú mismo si tienes tiempo y ganas de pelearte con Google. Lo que nos pagas es que quede bien hecho, verificado y optimizado para salir arriba — que es donde están las llamadas.</p></div>
-      <div class="verdad"><strong>Nadie puede garantizarte salir el primero.</strong><p>La posición la decide Google. El que te "garantice" el número 1 te está mintiendo. Lo que sí hacemos: dejarte mejor montado que tu competencia — que en la mayoría de zonas ni siquiera tiene la ficha bien hecha.</p></div>
-      <div class="verdad"><strong>No vendemos reseñas.</strong><p>Las reseñas falsas se detectan y Google suspende la ficha. Te montamos un sistema para que tus clientes de verdad te las dejen fácil — que además funcionan mejor.</p></div>
-      <div class="verdad"><strong>Si trabajas a domicilio, tu dirección no se muestra.</strong><p>La gente ve tu zona de trabajo, no tu casa ni tu almacén. Google solo usa la dirección para verificar que existes.</p></div>
+  </section>
+  <!-- ═══════════════════════════════════════════════════════════
+       FUNNEL VISUAL — Embudo A2 con valor añadido por etapa
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="funnel-section">
+    <div class="container">
+      <div class="funnel-head reveal">
+        <h2>Así funciona <span class="accent">en tu negocio</span>.</h2>
+        <p>Mira el viaje completo de un cliente potencial — desde que ve tu anuncio hasta que cerramos la venta. De 100 personas que ven el ad, 5 acaban siendo cliente. Esa es la realidad de un embudo bien montado.</p>
+      </div>
+      <div class="funnel-tabs reveal" role="tablist">
+        <button class="funnel-tab is-active" data-target="clinicas" role="tab" aria-selected="true">
+          <span class="tab-icon">🏥</span>Clínicas y salud
+        </button>
+        <button class="funnel-tab" data-target="rurales" role="tab" aria-selected="false">
+          <span class="tab-icon">🏡</span>Casas rurales
+        </button>
+        <button class="funnel-tab" data-target="b2b" role="tab" aria-selected="false">
+          <span class="tab-icon">💼</span>Servicios B2B
+        </button>
+        <button class="funnel-tab" data-target="ecommerce" role="tab" aria-selected="false">
+          <span class="tab-icon">🛒</span>Tienda online
+        </button>
+      </div>
+      <div class="funnel-canvas reveal">
+        <!-- ════ PANE: CLÍNICAS ════ -->
+        <div class="funnel-pane is-active" data-pane="clinicas">
+          <div class="funnel-context">
+            <strong>Ejemplo · Clínica dental privada en Madrid.</strong> Una persona con dolor de muelas busca "dentista urgencia" en Google a las 23h. Así llega hasta tener cita confirmada para mañana a las 10h, sin que tú levantes el móvil.
+          </div>
+          <div class="flow">
+            <!-- Stage 1: Anuncio -->
+            <div class="stage-row s-1">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">01</div>
+                    <div class="stage-eyebrow">Anuncio</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>100 personas lo ven</div>
+                  <div class="stage-title">Tu anuncio trabaja 24/7</div>
+                  <div class="stage-value">Mientras duermes, tu anuncio en <strong>Google e Instagram</strong> busca a la gente que ya tiene el problema que tú resuelves. Solo pagas por quien muestra interés real.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="ad-formats">
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon ig">
+                          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="white"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E1306C" stroke-width="2.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Instagram</span>
+                        <span class="ad-format-platform-tag">Anuncio</span>
+                      </div>
+                      <div class="ad-format-image-content">
+                        <div class="ad-format-author">
+                          <div class="ad-format-avatar"></div>
+                          <span class="ad-format-handle">clinica_dental</span>
+                        </div>
+                        <div class="ad-format-image clinic"></div>
+                        <div class="ad-format-headline">¿Te duele una muela? Cita hoy</div>
+                        <div class="ad-format-cta">Pedir cita →</div>
+                      </div>
+                    </div>
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon google">
+                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Google</span>
+                        <span class="ad-format-platform-tag">Búsqueda</span>
+                      </div>
+                      <div class="ad-format-search-content">
+                        <div class="ad-search-bar">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                          dentista urgencia madrid
+                        </div>
+                        <div class="ad-search-result">
+                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · clinica-dental.es</div>
+                          <div class="ad-search-title">Cita Dental Hoy · Urgencias 24h</div>
+                          <div class="ad-search-desc">Equipo colegiado. Pide cita en 2 minutos.</div>
+                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.9 (1.200)</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <!-- Stage 2: Landing -->
+            <div class="stage-row s-2">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">02</div>
+                    <div class="stage-eyebrow">Landing</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la web</div>
+                  <div class="stage-title">Cita en un clic, sin formularios</div>
+                  <div class="stage-value">Dos botones, dos caminos: <strong>reservar al momento</strong> o <strong>chatear por WhatsApp</strong>. El que lo tiene claro pulsa el primero. El que duda, el segundo. Sin formularios largos que matan la conversión en móvil.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="landing-screen">
+                        <div class="landing-content">
+                          <div class="landing-nav">
+                            <div class="landing-logo">Clínica</div>
+                            <div class="landing-burger"><span></span><span></span><span></span></div>
+                          </div>
+                          <div class="landing-hero">
+                            <div class="landing-hero-eyebrow">DENTISTA · MADRID</div>
+                            <div class="landing-hero-title">Cita hoy mismo</div>
+                            <div class="landing-hero-sub">Equipo colegiado · Urgencias 24h</div>
+                            <div class="landing-hero-cta">Reservar ahora →</div>
+                          </div>
+                          <div class="landing-trust">
+                            <span>★★★★★ 4.9</span>
+                            <span>+1.200 reseñas</span>
+                          </div>
+                          <div class="landing-actions">
+                            <div class="landing-actions-title">¿Qué prefieres?</div>
+                            <div class="landing-action-btn primary">Reservar cita →</div>
+                            <div class="landing-action-or">o resuelve dudas</div>
+                            <div class="landing-action-btn wa">
+                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+                              WhatsApp
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <!-- Stage 3: Formulario -->
+            <div class="stage-row s-3">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">03</div>
+                    <div class="stage-eyebrow">Formulario</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>15 dejan datos</div>
+                  <div class="stage-title">Lead cualificado antes de hablar</div>
+                  <div class="stage-value">Sabes <strong>quién es, qué necesita y cuándo puede</strong> antes de la primera palabra. La conversación arranca por el final, no por el principio.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="form-fill-screen">
+                        <div class="form-fill-header">Pide tu cita</div>
+                        <div class="form-fill-field field-1"><span class="typed">Laura Pérez</span></div>
+                        <div class="form-fill-field field-2"><span class="typed">laura@gmail.com</span></div>
+                        <div class="form-fill-field field-3"><span class="typed">+34 612 345</span></div>
+                        <div class="form-fill-submit">Reservar cita</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <!-- Stage 4: Chatbot -->
+            <div class="stage-row s-4">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">04</div>
+                    <div class="stage-eyebrow">Comercial digital</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>10 conversan</div>
+                  <div class="stage-title">Tu vendedor que no duerme</div>
+                  <div class="stage-value">Un <strong>chatbot por WhatsApp</strong> entrenado con tu negocio. Responde en 30 segundos, resuelve dudas, agenda la cita. Tú llegas cuando ya está cerrada.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="chat-screen">
+                        <div class="chat-header">
+                          <div class="chat-avatar">CD</div>
+                          <div class="chat-header-info">
+                            <div class="chat-header-name">Clínica Dental</div>
+                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
+                          </div>
+                        </div>
+                        <div class="chat-body">
+                          <div class="chat-bubble bot b1">Hola Laura 👋 ¿En qué te ayudamos?</div>
+                          <div class="chat-bubble user b2">Tengo dolor en una muela desde anoche</div>
+                          <div class="chat-bubble bot b3">Vaya, lo siento 😔 ¿Mañana 10h te va bien?</div>
+                          <div class="chat-bubble user b4">Sí, perfecto</div>
+                          <div class="chat-bubble bot success b5">Cita confirmada · Mañana 10h</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <!-- Stage 5: Cerramos la venta -->
+            <div class="stage-row s-5">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">05</div>
+                    <div class="stage-eyebrow">Cierre</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>5 cierran</div>
+                  <div class="stage-title">Cerramos la venta</div>
+                  <div class="stage-value">El cliente llega <strong>caliente, decidido y con cita en agenda</strong>. Tú solo dices que sí. El sistema ya ha hecho el trabajo duro.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="sale-screen">
+                        <div class="sale-check">
+                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
+                        </div>
+                        <div class="sale-title">Cita confirmada</div>
+                        <div class="sale-detail">Laura · Mañana 10h</div>
+                        <div class="sale-kpi">+47 CITAS / MES</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ════ PANE: CASAS RURALES ════ -->
+        <div class="funnel-pane" data-pane="rurales">
+          <div class="funnel-context">
+            <strong>Ejemplo · Casa rural en Sierra de Cazorla.</strong> Una pareja busca escapada de fin de semana. Pasan de Booking (comisión 18%) a reservar directo contigo, y vuelven cada otoño sin pagar comisiones.
+          </div>
+          <div class="flow">
+            <div class="stage-row s-1">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">01</div>
+                    <div class="stage-eyebrow">Anuncio</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>100 personas lo ven</div>
+                  <div class="stage-title">Tu anuncio trabaja 24/7</div>
+                  <div class="stage-value">Una foto bonita de tu casa al atardecer, en Instagram y Google, dirigida a quien ya está <strong>buscando escapada rural</strong>. Sin disparar a ciegas.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="ad-formats">
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon ig">
+                          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="white"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E1306C" stroke-width="2.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Instagram</span>
+                        <span class="ad-format-platform-tag">Anuncio</span>
+                      </div>
+                      <div class="ad-format-image-content">
+                        <div class="ad-format-author">
+                          <div class="ad-format-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);"></div>
+                          <span class="ad-format-handle">casarural_es</span>
+                        </div>
+                        <div class="ad-format-image rural"></div>
+                        <div class="ad-format-headline">Escapada rural sin comisión</div>
+                        <div class="ad-format-cta">Ver fechas →</div>
+                      </div>
+                    </div>
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon google">
+                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Google</span>
+                        <span class="ad-format-platform-tag">Búsqueda</span>
+                      </div>
+                      <div class="ad-format-search-content">
+                        <div class="ad-search-bar">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                          casa rural cazorla
+                        </div>
+                        <div class="ad-search-result">
+                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · cortijodelvalle.es</div>
+                          <div class="ad-search-title">Casa Rural Cazorla · Sin Comisión</div>
+                          <div class="ad-search-desc">Reserva directa. Hasta 18% más barato.</div>
+                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.8 (340)</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-2">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">02</div>
+                    <div class="stage-eyebrow">Landing</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la web</div>
+                  <div class="stage-title">Reserva directa, sin pasar por Booking</div>
+                  <div class="stage-value">Dos botones: <strong>reservar al momento</strong> o <strong>chatear por WhatsApp</strong> para preguntar disponibilidad. Motor de reservas propio + comparativa visible "directo vs Booking". El huésped decide cómo contactar.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="landing-screen">
+                        <div class="landing-content">
+                          <div class="landing-nav">
+                            <div class="landing-logo">Cortijo</div>
+                            <div class="landing-burger"><span></span><span></span><span></span></div>
+                          </div>
+                          <div class="landing-hero">
+                            <div class="landing-hero-eyebrow">CASA RURAL · CAZORLA</div>
+                            <div class="landing-hero-title">Reserva directa</div>
+                            <div class="landing-hero-sub">Sin comisiones · Hasta 18% más barato</div>
+                            <div class="landing-hero-cta">Ver fechas →</div>
+                          </div>
+                          <div class="landing-trust">
+                            <span>★★★★★ 4.8</span>
+                            <span>+340 huéspedes</span>
+                          </div>
+                          <div class="landing-actions">
+                            <div class="landing-actions-title">¿Cómo prefieres reservar?</div>
+                            <div class="landing-action-btn primary">Reservar ahora →</div>
+                            <div class="landing-action-or">o pregunta primero</div>
+                            <div class="landing-action-btn wa">
+                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+                              WhatsApp
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-3">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">03</div>
+                    <div class="stage-eyebrow">Formulario</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>15 dejan datos</div>
+                  <div class="stage-title">Reserva con un solo paso</div>
+                  <div class="stage-value">Fechas, ocupantes, datos. Sin redirección a Booking, sin <strong>pagar 18% de comisión</strong>. El margen vuelve a tu bolsillo.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="form-fill-screen">
+                        <div class="form-fill-header">Reserva tu escapada</div>
+                        <div class="form-fill-field field-1"><span class="typed">Marcos y Ana</span></div>
+                        <div class="form-fill-field field-2"><span class="typed">m.castro@gmail.com</span></div>
+                        <div class="form-fill-field field-3"><span class="typed">2 noches · 2p</span></div>
+                        <div class="form-fill-submit">Reservar ahora</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-4">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">04</div>
+                    <div class="stage-eyebrow">Comercial digital</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>10 conversan</div>
+                  <div class="stage-title">Asistente que cuida la reserva</div>
+                  <div class="stage-value">Tu <strong>chatbot WhatsApp</strong> confirma, da indicaciones para llegar, sugiere actividades. El huésped llega a casa antes incluso de pisarla.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="chat-screen">
+                        <div class="chat-header">
+                          <div class="chat-avatar">CR</div>
+                          <div class="chat-header-info">
+                            <div class="chat-header-name">Cortijo del Valle</div>
+                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
+                          </div>
+                        </div>
+                        <div class="chat-body">
+                          <div class="chat-bubble bot b1">¡Hola Marcos! 🌿 ¿Necesitas algo?</div>
+                          <div class="chat-bubble user b2">¿A qué hora puedo llegar?</div>
+                          <div class="chat-bubble bot b3">Check-in desde las 16h 🌅</div>
+                          <div class="chat-bubble user b4">Perfecto, gracias</div>
+                          <div class="chat-bubble bot success b5">Te envío indicaciones</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-5">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">05</div>
+                    <div class="stage-eyebrow">Cierre</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>5 reservan</div>
+                  <div class="stage-title">Cerramos la venta</div>
+                  <div class="stage-value">Reserva 100% directa. <strong>Cero comisión</strong> a Booking. Ese margen es ahora tuyo, y el huésped tiene tus datos para volver.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="sale-screen">
+                        <div class="sale-check">
+                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
+                        </div>
+                        <div class="sale-title">Reserva confirmada</div>
+                        <div class="sale-detail">Marcos · 2 noches · 380€</div>
+                        <div class="sale-kpi">85% OCUPACIÓN</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ════ PANE: B2B ════ -->
+        <div class="funnel-pane" data-pane="b2b">
+          <div class="funnel-context">
+            <strong>Ejemplo · Asesoría laboral en Valencia.</strong> Una PYME con 22 empleados busca cambiar de gestoría. En 3 días la empresa pasa de buscar en Google a firmar contrato con el despacho — sin que el socio tenga que ir tras el cliente.
+          </div>
+          <div class="flow">
+            <div class="stage-row s-1">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">01</div>
+                    <div class="stage-eyebrow">Anuncio</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>100 empresas lo ven</div>
+                  <div class="stage-title">Tu anuncio busca empresas</div>
+                  <div class="stage-value"><strong>LinkedIn Ads + Google Search</strong> dirigido a CEOs y RRHH de empresas con 10-50 empleados. No despertamos al que no busca — alcanzamos al que ya está mirando.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="ad-formats">
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon li">
+                          <svg viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8 18v-7H5v7h3zm-1.5-8.3a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM19 18v-4c0-1.9-1.1-3-3-3-1 0-1.7.5-2 1v-1h-3v7h3v-4c0-.8.5-1.3 1.3-1.3.7 0 1.2.5 1.2 1.3v4h2.5z"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">LinkedIn</span>
+                        <span class="ad-format-platform-tag">Patrocinado</span>
+                      </div>
+                      <div class="ad-format-image-content">
+                        <div class="ad-format-author">
+                          <div class="ad-format-avatar li-avatar"></div>
+                          <span class="ad-format-handle">Despacho · Asesoría</span>
+                        </div>
+                        <div class="ad-format-image b2b"></div>
+                        <div class="ad-format-headline">Asesoría laboral para PYMES</div>
+                        <div class="ad-format-cta">Pedir propuesta →</div>
+                      </div>
+                    </div>
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon google">
+                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Google</span>
+                        <span class="ad-format-platform-tag">Búsqueda</span>
+                      </div>
+                      <div class="ad-format-search-content">
+                        <div class="ad-search-bar">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                          asesoría laboral pymes valencia
+                        </div>
+                        <div class="ad-search-result">
+                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · despacho-laboral.es</div>
+                          <div class="ad-search-title">Asesoría Laboral · 15 años en PYMES</div>
+                          <div class="ad-search-desc">Especialistas en PYMES de 10-50 empleados.</div>
+                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.9 (87)</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-2">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">02</div>
+                    <div class="stage-eyebrow">Landing</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la web</div>
+                  <div class="stage-title">Decisión rápida o conversación</div>
+                  <div class="stage-value">Dos botones: <strong>agendar una call</strong> o <strong>chatear por WhatsApp</strong> con un socio del despacho. El CEO elige el ritmo según su momento de decisión. Cero formularios largos en mobile.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="landing-screen">
+                        <div class="landing-content">
+                          <div class="landing-nav">
+                            <div class="landing-logo">Despacho</div>
+                            <div class="landing-burger"><span></span><span></span><span></span></div>
+                          </div>
+                          <div class="landing-hero">
+                            <div class="landing-hero-eyebrow">ASESORÍA · VALENCIA</div>
+                            <div class="landing-hero-title">Propuesta a medida</div>
+                            <div class="landing-hero-sub">Especialistas en PYMES de 10-50 empleados</div>
+                            <div class="landing-hero-cta">Agendar call →</div>
+                          </div>
+                          <div class="landing-trust">
+                            <span>+150 PYMES</span>
+                            <span>15 años</span>
+                          </div>
+                          <div class="landing-actions">
+                            <div class="landing-actions-title">¿Cómo prefieres avanzar?</div>
+                            <div class="landing-action-btn primary">Agendar call →</div>
+                            <div class="landing-action-or">o habla ahora</div>
+                            <div class="landing-action-btn wa">
+                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+                              WhatsApp
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-3">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">03</div>
+                    <div class="stage-eyebrow">Formulario</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>15 dejan datos</div>
+                  <div class="stage-title">Cualificación previa automática</div>
+                  <div class="stage-value">Empresa, sector, número de empleados, necesidad concreta. Llegas a la llamada con <strong>el caso ya analizado</strong>, no a preguntar lo básico.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="form-fill-screen">
+                        <div class="form-fill-header">Pide propuesta</div>
+                        <div class="form-fill-field field-1"><span class="typed">Roberto Díaz</span></div>
+                        <div class="form-fill-field field-2"><span class="typed">Solidario SL · 22 emp</span></div>
+                        <div class="form-fill-field field-3"><span class="typed">Cambio gestor</span></div>
+                        <div class="form-fill-submit">Solicitar</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-4">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">04</div>
+                    <div class="stage-eyebrow">Comercial digital</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>10 conversan</div>
+                  <div class="stage-title">Pre-cualificación previa a la call</div>
+                  <div class="stage-value">Un <strong>asistente por WhatsApp</strong> pide los datos clave, manda un caso similar de ejemplo y agenda la call. El CEO llega caliente y con expectativa clara.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="chat-screen">
+                        <div class="chat-header">
+                          <div class="chat-avatar">D</div>
+                          <div class="chat-header-info">
+                            <div class="chat-header-name">Despacho · Asesoría</div>
+                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
+                          </div>
+                        </div>
+                        <div class="chat-body">
+                          <div class="chat-bubble bot b1">Hola Roberto 👋 ¿22 empleados ahora?</div>
+                          <div class="chat-bubble user b2">Sí, y queremos cambiar de gestor</div>
+                          <div class="chat-bubble bot b3">Te paso caso similar y agenda 📎</div>
+                          <div class="chat-bubble user b4">Perfecto, mañana 17:30 bien</div>
+                          <div class="chat-bubble bot success b5">Call agendada · Mañana 17:30</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-5">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">05</div>
+                    <div class="stage-eyebrow">Cierre</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>5 firman</div>
+                  <div class="stage-title">Cerramos la venta</div>
+                  <div class="stage-value">Contrato recurrente de <strong>3.400€/año LTV medio</strong>. La call ya viene preparada por ambos lados — solo queda confirmar el encaje.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="sale-screen">
+                        <div class="sale-check">
+                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
+                        </div>
+                        <div class="sale-title">Contrato firmado</div>
+                        <div class="sale-detail">Solidario SL · 22 empleados</div>
+                        <div class="sale-kpi">3.400€ LTV / CLIENTE</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ════ PANE: E-COMMERCE ════ -->
+        <div class="funnel-pane" data-pane="ecommerce">
+          <div class="funnel-context">
+            <strong>Ejemplo · Tienda online de cosmética natural.</strong> Una clienta ve el anuncio en Instagram a las 22h, mira el producto y se va sin comprar. Al día siguiente el sistema recupera su carrito — y compra. Sin que tú toques nada.
+          </div>
+          <div class="flow">
+            <div class="stage-row s-1">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">01</div>
+                    <div class="stage-eyebrow">Anuncio</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>100 personas lo ven</div>
+                  <div class="stage-title">Tu producto sale a buscar compradores</div>
+                  <div class="stage-value"><strong>Instagram + Google Shopping</strong> con tu catálogo conectado. Cada producto se anuncia solo, con su foto y su precio, a quien ya está mirando cosas parecidas.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="ad-formats">
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon ig">
+                          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="white"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E1306C" stroke-width="2.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Instagram</span>
+                        <span class="ad-format-platform-tag">Anuncio</span>
+                      </div>
+                      <div class="ad-format-image-content">
+                        <div class="ad-format-author">
+                          <div class="ad-format-avatar"></div>
+                          <span class="ad-format-handle">cosmetica_natural</span>
+                        </div>
+                        <div class="ad-format-image ecom"></div>
+                        <div class="ad-format-headline">Sérum Vitamina C · 29,90€</div>
+                        <div class="ad-format-cta">Comprar ahora →</div>
+                      </div>
+                    </div>
+                    <div class="ad-format">
+                      <div class="ad-format-header">
+                        <span class="ad-format-platform-icon google">
+                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
+                        </span>
+                        <span class="ad-format-platform-name">Google</span>
+                        <span class="ad-format-platform-tag">Shopping</span>
+                      </div>
+                      <div class="ad-format-search-content">
+                        <div class="ad-search-bar">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                          sérum vitamina c natural
+                        </div>
+                        <div class="ad-search-result">
+                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · Shopping</div>
+                          <div class="ad-search-title">Sérum Vitamina C · 29,90€ · Envío 24h</div>
+                          <div class="ad-search-desc">Cosmética natural certificada. Envío gratis +45€.</div>
+                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.8 (2.400)</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-2">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">02</div>
+                    <div class="stage-eyebrow">Ficha de producto</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la tienda</div>
+                  <div class="stage-title">Una ficha que vende sola</div>
+                  <div class="stage-value">Foto clara, precio visible, <strong>compra en un clic</strong> y WhatsApp para dudas de última hora. En móvil, cada segundo de fricción son ventas perdidas.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="landing-screen">
+                        <div class="landing-content">
+                          <div class="landing-nav">
+                            <div class="landing-logo">Naturea</div>
+                            <div class="landing-burger"><span></span><span></span><span></span></div>
+                          </div>
+                          <div class="landing-hero">
+                            <div class="landing-hero-eyebrow">COSMÉTICA NATURAL</div>
+                            <div class="landing-hero-title">Sérum Vitamina C</div>
+                            <div class="landing-hero-sub">29,90€ · Envío gratis desde 45€</div>
+                            <div class="landing-hero-cta">Añadir al carrito →</div>
+                          </div>
+                          <div class="landing-trust">
+                            <span>★ 4,8 · 2.400 reseñas</span>
+                            <span>Envío 24h</span>
+                          </div>
+                          <div class="landing-actions">
+                            <div class="landing-actions-title">¿Lista para probarlo?</div>
+                            <div class="landing-action-btn primary">Comprar ahora →</div>
+                            <div class="landing-action-or">o pregúntanos</div>
+                            <div class="landing-action-btn wa">
+                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+                              WhatsApp
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-3">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">03</div>
+                    <div class="stage-eyebrow">Carrito</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>15 añaden al carrito</div>
+                  <div class="stage-title">El momento crítico de toda tienda</div>
+                  <div class="stage-value">7 de cada 10 carritos se abandonan — es normal. La diferencia está en lo que pasa después: <strong>el sistema no deja morir esos carritos</strong>.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="form-fill-screen">
+                        <div class="form-fill-header">Tu carrito</div>
+                        <div class="form-fill-field field-1"><span class="typed">Sérum Vitamina C · 29,90€</span></div>
+                        <div class="form-fill-field field-2"><span class="typed">Crema hidratante · 19,90€</span></div>
+                        <div class="form-fill-field field-3"><span class="typed">Envío gratis ✓</span></div>
+                        <div class="form-fill-submit">Pagar 49,80€</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-4">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">04</div>
+                    <div class="stage-eyebrow">Recuperación</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>10 vuelven al carrito</div>
+                  <div class="stage-title">El carrito abandonado que se recupera solo</div>
+                  <div class="stage-value">Recordatorio automático por <strong>WhatsApp y email</strong> con el carrito guardado y un empujón para decidir. Es la venta que la mayoría de tiendas pierde — y la que más barata sale.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="chat-screen">
+                        <div class="chat-header">
+                          <div class="chat-avatar">N</div>
+                          <div class="chat-header-info">
+                            <div class="chat-header-name">Naturea · Tienda</div>
+                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
+                          </div>
+                        </div>
+                        <div class="chat-body">
+                          <div class="chat-bubble bot b1">Hola Ana 👋 te guardamos el carrito 🛒</div>
+                          <div class="chat-bubble user b2">¡Uy! Se me olvidó por completo</div>
+                          <div class="chat-bubble bot b3">Aquí lo tienes, con envío gratis 📎</div>
+                          <div class="chat-bubble user b4">Perfecto, lo compro ahora</div>
+                          <div class="chat-bubble bot success b5">Pedido confirmado · 49,80€</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stage-connector"></div>
+            <div class="stage-row s-5">
+              <div class="stage">
+                <div class="stage-meta">
+                  <div class="stage-badge-row">
+                    <div class="stage-num">05</div>
+                    <div class="stage-eyebrow">Venta y recompra</div>
+                  </div>
+                  <div class="stage-count"><span class="stage-count-dot"></span>5 compran</div>
+                  <div class="stage-title">La venta se cierra — y se repite</div>
+                  <div class="stage-value">Cada euro en anuncios vuelve multiplicado y <strong>cada clienta entra en el circuito de recompra</strong>: email de reposición, novedades, ofertas a medida. La segunda venta ya no cuesta publicidad.</div>
+                </div>
+                <div class="stage-visual">
+                  <div class="device-frame">
+                    <div class="device-screen">
+                      <div class="sale-screen">
+                        <div class="sale-check">
+                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
+                        </div>
+                        <div class="sale-title">Pedido confirmado</div>
+                        <div class="sale-detail">Carrito medio 49€ · Clienta recurrente</div>
+                        <div class="sale-kpi">ROAS 5,2× / MES</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ─── VALUE SUMMARY ─── -->
+      <div class="value-summary reveal">
+        <div class="value-summary-eyebrow">SISTEMA AUTOMATIZADO 24/7</div>
+        <h3>Mientras tú atiendes tu negocio, <span class="accent">el sistema está trabajando.</span></h3>
+        <div class="value-grid">
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div class="value-text">
+              <span class="value-title">Atrayendo clientes</span>
+              <span class="value-desc">Tus anuncios corren 24/7 buscando a quien te necesita</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="value-text">
+              <span class="value-title">Cualificando contactos</span>
+              <span class="value-desc">Solo te llegan leads listos, no curiosos sin presupuesto</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div class="value-text">
+              <span class="value-title">Respondiendo al instante</span>
+              <span class="value-desc">WhatsApp inteligente que cierra citas mientras duermes</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <div class="value-text">
+              <span class="value-title">Midiéndolo todo</span>
+              <span class="value-desc">Cada euro invertido, contabilizado y optimizado mes a mes</span>
+            </div>
+          </div>
+        </div>
+        <div class="tracking-block">
+          <span class="tracking-eyebrow">📊 Trazabilidad 100%</span>
+          <div class="tracking-dashboard">
+            <div class="tracking-dashboard-header">
+              <div>
+                <div class="tracking-dashboard-title">Tu mes a vista de pájaro</div>
+                <div class="tracking-dashboard-month">Reporte mensual</div>
+              </div>
+              <div class="tracking-dashboard-live">en directo</div>
+            </div>
+            <div class="tracking-stat">
+              <div class="tracking-stat-label">
+                <span class="tracking-stat-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+                </span>
+                Has invertido
+              </div>
+              <div class="tracking-stat-value">800 €</div>
+            </div>
+            <div class="tracking-stat">
+              <div class="tracking-stat-label">
+                <span class="tracking-stat-icon">
+                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                Clientes nuevos
+              </div>
+              <div class="tracking-stat-value">12</div>
+            </div>
+            <div class="tracking-stat">
+              <div class="tracking-stat-label">
+                <span class="tracking-stat-icon">
+                  <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </span>
+                Te han generado
+              </div>
+              <div class="tracking-stat-value">4.200 €</div>
+            </div>
+            <div class="tracking-stat highlight">
+              <div class="tracking-stat-label">
+                <span class="tracking-stat-icon">
+                  <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </span>
+                Retorno
+              </div>
+              <div class="tracking-stat-value">5,2 ×</div>
+            </div>
+          </div>
+          <div class="tracking-text">
+            <h4>Cada paso queda registrado · <span class="accent">cero suposiciones</span>.</h4>
+            <p>Desde que un cliente <strong>ve tu anuncio</strong>, hasta que <strong>entra en la web</strong>, <strong>deja sus datos</strong>, <strong>conversa con el chatbot</strong> y <strong>te paga</strong> — cada paso está medido y atribuido.</p>
+            <p>Cada mes te llega un reporte así de claro: <strong>cuánto has invertido, cuántos clientes te ha traído el sistema, cuánto te han facturado</strong> y cuál es tu retorno real por cada euro invertido.</p>
+            <p>Sin "creo que va bien". Sin estimaciones. Números reales, con nombre y apellido.</p>
+            <div class="tracking-pills">
+              <span class="tracking-pill">Google Analytics</span>
+              <span class="tracking-pill">Meta Pixel</span>
+              <span class="tracking-pill">Google Ads</span>
+              <span class="tracking-pill">Clarity</span>
+              <span class="tracking-pill">WhatsApp tracking</span>
+            </div>
+          </div>
+        </div>
+        <div class="value-summary-cta">
+          Tú solo recibes <strong>leads listos para comprar</strong>. El resto del trabajo, lo hace el sistema.
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2 class="sec-title">Para negocios <span class="mag">como el tuyo</span></h2>
-    <p class="gremios">
-      Desbroces y forestales <span class="sep">·</span> Fontanería <span class="sep">·</span> Electricidad <span class="sep">·</span> Reformas <span class="sep">·</span> Venta de leña <span class="sep">·</span> Jardinería <span class="sep">·</span> Limpieza <span class="sep">·</span> Talleres <span class="sep">·</span> Peluquerías y estética <span class="sep">·</span> Masajes <span class="sep">·</span> Clínicas <span class="sep">·</span> Bares y restaurantes <span class="sep">·</span> Tiendas <span class="sep">·</span> Cerrajería <span class="sep">·</span> Pintura <span class="sep">·</span> Mudanzas <span class="sep">·</span> Y cualquier negocio que viva de su zona
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec-title">Preguntas <span class="mag">rápidas</span></h2>
-    <div class="faq">
-      <details>
-        <summary>¿Cuánto tarda en estar lista?</summary>
-        <p>Nosotros la montamos en 2-3 días. Luego Google tiene que verificarla — normalmente manda una carta con un código a tu dirección, que tarda entre 5 y 14 días. En total, cuenta con 2-3 semanas hasta verla funcionando.</p>
-      </details>
-      <details>
-        <summary>No tengo local, trabajo yendo a casa del cliente. ¿Puedo salir en Maps?</summary>
-        <p>Sí. Tu ficha se monta como "negocio de zona de servicio": sales en las búsquedas de toda tu zona de trabajo y tu dirección queda oculta. Es justo como funciona para fontaneros, desbroces, limpieza, etc.</p>
-      </details>
-      <details>
-        <summary>¿Y si ya tengo una ficha pero está hecha un desastre?</summary>
-        <p>También vale. La reclamamos, la arreglamos y la dejamos optimizada. Mismo precio.</p>
-      </details>
-      <details>
-        <summary>¿Qué necesitáis de mí?</summary>
-        <p>Poca cosa: el nombre de tu negocio, tu zona, tus servicios, tu teléfono y unas cuantas fotos de tus trabajos hechas con el móvil. Con eso nos apañamos.</p>
-      </details>
-      <details>
-        <summary>¿Esto me trae clientes seguro?</summary>
-        <p>Seguro no hay nada, y quien te lo prometa, cuidado con él. Lo que es un hecho: si no estás en Maps, el que busca "tu oficio + tu zona" llama a otro. Estar bien montado es la base — y en la mayoría de gremios, con eso ya vas por delante de casi todos.</p>
-      </details>
-      <details>
-        <summary>¿Y después me vais a cobrar algo todos los meses?</summary>
-        <p>No. Pago único y la ficha es tuya. Si más adelante quieres que te llevemos más cosas (anuncios, web, redes), eso ya lo hablamos aparte — pero solo si tú quieres.</p>
-      </details>
+  </section>
+  <!-- ═══ METODO — CÓMO TRABAJAMOS ═══ -->
+  <section class="metodo">
+    <div class="container">
+      <div class="metodo-head reveal">
+        <h2>Cómo trabajamos · <span class="accent">nuestro método</span>.</h2>
+        <p>Cuatro pasos. Cero humo. Si en cualquier punto algo no encaja, lo paramos sin dramas.</p>
+      </div>
+      <div class="metodo-grid reveal">
+        <div class="metodo-paso">
+          <div class="metodo-num">1</div>
+          <div class="metodo-tiempo">30 minutos · gratis</div>
+          <h3>Diagnóstico</h3>
+          <p>Te llamamos, miramos tu negocio, vemos por dónde sangra y por dónde puede crecer. Te llevas un plan accionable sin compromiso, encajemos o no.</p>
+        </div>
+        <div class="metodo-paso">
+          <div class="metodo-num">2</div>
+          <div class="metodo-tiempo">14 – 21 días</div>
+          <h3>Sistema</h3>
+          <p>Montamos el funnel completo: ads, landing, tracking, automation de emails y WhatsApp. Todo listo y medible antes de meter un euro en publicidad.</p>
+        </div>
+        <div class="metodo-paso">
+          <div class="metodo-num">3</div>
+          <div class="metodo-tiempo">semana 3 – 4</div>
+          <h3>Lanzamiento</h3>
+          <p>Activamos campañas con presupuesto controlado. Los primeros leads suelen llegar entre la semana 3 y la 5. Tú solo atiendes a quien ya quiere comprar.</p>
+        </div>
+        <div class="metodo-paso">
+          <div class="metodo-num">4</div>
+          <div class="metodo-tiempo">cada mes · siempre</div>
+          <h3>Optimización</h3>
+          <p>Reporting transparente, ajustes en base a datos reales y una conversación honesta cada mes sobre qué funciona, qué cambia y dónde invertimos más.</p>
+        </div>
+      </div>
+      <div class="anti-promesas reveal">
+        <div class="anti-promesas-head">
+          <div>
+            <div class="anti-promesas-eyebrow">LO QUE NO HACEMOS</div>
+            <h3>Las cosas que no vas a oír en una reunión con nosotros.</h3>
+          </div>
+        </div>
+        <p class="anti-promesas-lead">Hay agencias que prometen mucho y entregan poco. Nosotros preferimos prometer poco y entregar de verdad. Esto es lo que no hacemos:</p>
+        <ul class="anti-lista">
+          <li>
+            <div>
+              <span class="anti-lista-titulo">Números mágicos sin diagnosticar</span>
+              <span class="anti-lista-desc">No prometemos "×3" o "+200% ventas" sin haber visto tu negocio. Primero entendemos, luego planteamos.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="anti-lista-titulo">Permanencias de 12 meses</span>
+              <span class="anti-lista-desc">Mínimo de 3 meses (lo necesita el algoritmo para aprender). Después, decides tú mes a mes si seguir o pausar.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="anti-lista-titulo">Que te lleve un becario</span>
+              <span class="anti-lista-desc">Trato directo con quien decide. Sin "account managers" rotando ni reuniones con tres personas que no han visto tu cuenta.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span class="anti-lista-titulo">Contenido genérico de stock</span>
+              <span class="anti-lista-desc">Cada campaña con creatividades propias, copy a medida, fotos reales (tuyas o producidas). Nada de imágenes de bancos.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <h2>Tu zona te está buscando.<br><span>Que te encuentre a ti.</span></h2>
-    <p>Escríbenos ahora y en 2-3 semanas tu negocio sale en Google Maps. 150€ + IVA, en dos pagos, sin cuotas.</p>
-    <a class="cta-wa js-wa" target="_blank" rel="noopener" href="https://wa.me/34618792084?text=Hola%2C%20quiero%20la%20ficha%20de%20Google%20para%20mi%20negocio">
-      <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-      Quiero mi ficha en Google
-    </a>
-    <div class="cta-note" style="color: rgba(255,255,255,0.6);">Sin compromiso. Te contestamos hoy.</div>
-  </div>
-</section>
-
-<footer class="footer">
-  <a href="index.html">GOGOA.</a> · Tu compañero digital · <a href="https://wa.me/34618792084">WhatsApp</a>
-</footer>
-
-<script>
-  // Oficio rotando en el mockup
-  (function(){
-    const trades = ['desbroces','fontanero','venta de leña','reformas','electricista','peluquería','cerrajero','jardinería'];
-    const names  = ['Forestales M.','Fontanería J.','Leñas del Norte','Reformas R.','Instalaciones E.','Peluquería A.','Cerrajería 24h','Jardines V.'];
-    let i = 0;
-    const t = document.getElementById('trade');
-    const n = document.getElementById('bizname');
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return;
-    setInterval(() => {
-      i = (i + 1) % trades.length;
-      t.style.opacity = 0; n.style.opacity = 0;
-      setTimeout(() => {
-        t.textContent = trades[i];
-        n.textContent = names[i];
-        t.style.opacity = 1; n.style.opacity = 1;
-      }, 240);
-    }, 2600);
-    t.style.transition = 'opacity 0.24s'; n.style.transition = 'opacity 0.24s';
-  })();
-
-  // Tracking de conversión en cada click de WhatsApp
-  document.querySelectorAll('.js-wa').forEach(a => {
-    a.addEventListener('click', () => {
-      if (typeof fbq !== 'undefined') fbq('track', 'Contact');
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', { currency: 'EUR', value: 150 });
-        gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'ficha-google' });
-      }
+  </section>
+  <!-- ═══ FORM SECTION ═══ -->
+  <section class="form-section" id="contacto">
+    <div class="container">
+      <div class="form-section-head reveal">
+        <h2>¿Hablamos de <span class="accent">tu negocio</span>?</h2>
+        <p>Cuéntanos qué necesitas resolver y te proponemos un plan en menos de 24h.</p>
+      </div>
+      <div class="form-bottom-grid">
+        <div class="next-steps reveal">
+          <h3>Qué pasa después de enviar el formulario.</h3>
+          <p>Sin sorpresas. Sin venta agresiva. Sin compromisos.</p>
+          <div class="next-list">
+            <div class="next-item">
+              <div class="next-num">1</div>
+              <div class="next-body">
+                <strong>Te respondemos en 24h</strong>
+                <span>Por email o WhatsApp, lo que prefieras. Te decimos si tu caso encaja con lo que hacemos.</span>
+              </div>
+            </div>
+            <div class="next-item">
+              <div class="next-num">2</div>
+              <div class="next-body">
+                <strong>Llamada de 30 min, sin compromiso</strong>
+                <span>Para entender tu negocio, tus objetivos y si podemos ayudarte. Si no encajamos, te lo decimos directamente.</span>
+              </div>
+            </div>
+            <div class="next-item">
+              <div class="next-num">3</div>
+              <div class="next-body">
+                <strong>Si encajamos, empezamos</strong>
+                <span>Te proponemos un plan adaptado a tu negocio y presupuesto. Tú decides si quieres avanzar. Si no, te llevas consejos gratis.</span>
+              </div>
+            </div>
+          </div>
+          <div class="next-callout">
+            <strong>Lo prometemos:</strong> no te vamos a llamar a las 8 de la tarde para "cerrar" la venta. Si decides que no es para ti, perfecto. Aquí estamos cuando sea el momento.
+          </div>
+        </div>
+        <div class="form-card reveal">
+          <span class="form-badge">DIAGNÓSTICO GRATIS</span>
+          <h3>Empecemos.</h3>
+          <p class="form-sub">Rellena el formulario y nos ponemos en contacto.</p>
+          <form id="leadForm" novalidate>
+            <input type="hidden" name="_subject" value="🚀 Nuevo lead desde gogoa.es">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-fields">
+              <div class="field">
+                <label for="nombre">Nombre <span class="req">*</span></label>
+                <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="María García">
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="maria@mi-negocio.com">
+              </div>
+              <div class="field">
+                <label for="telefono">Teléfono / WhatsApp <span class="req">*</span></label>
+                <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="+34 600 000 000">
+              </div>
+              <div class="field">
+                <label for="facturacion">¿Cuánto facturas al mes?</label>
+                <select id="facturacion" name="facturacion">
+                  <option value="">Prefiero no decirlo</option>
+                  <option>Menos de 10.000 €</option>
+                  <option>10.000 € – 30.000 €</option>
+                  <option>30.000 € – 100.000 €</option>
+                  <option>Más de 100.000 €</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="mensaje">¿Qué necesitas resolver? <span class="req">*</span></label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos un poco sobre tu negocio y qué te gustaría conseguir..."></textarea>
+              </div>
+              <label class="legal">
+                <input type="checkbox" name="privacidad" required>
+                <span>Acepto la <a href="#privacidad">política de privacidad</a> y recibir comunicaciones de Gogoa.</span>
+              </label>
+              <button type="submit" class="btn btn-magenta btn-block form-submit-btn" id="submitBtn">
+                Solicitar diagnóstico gratuito →
+              </button>
+              <div class="form-divider">o</div>
+              <a class="wa-btn" href="https://wa.me/34618792084?text=Hola%20Gogoa%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+                Escríbenos por WhatsApp
+              </a>
+              <div class="form-success" id="formSuccess">✓ ¡Mensaje enviado! Te respondemos en menos de 24h.</div>
+              <div class="form-error" id="formError">⚠ Algo ha fallado. Inténtalo o escríbenos por WhatsApp.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <a href="#" class="logo">GOGOA<span>.</span></a>
+        <div class="footer-links">
+          <a href="mailto:hola@gogoa.es">hola@gogoa.es</a>
+          <a href="https://wa.me/34618792084" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/gogoa.es" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-links">
+          <a href="#aviso-legal">Aviso legal</a>
+          <a href="#privacidad">Privacidad</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Gogoa · Socios estratégicos para negocios con potencial
+      </div>
+    </div>
+  </footer>
+  <script>
+    /* Tabs switcher for funnel */
+    document.querySelectorAll('.funnel-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        document.querySelectorAll('.funnel-tab').forEach(t => {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.funnel-pane').forEach(p => p.classList.remove('is-active'));
+        document.querySelector(`[data-pane="${target}"]`).classList.add('is-active');
+      });
     });
-  });
+    /* Form submit handler */
+    async function handleFormSubmit(form) {
+      const successEl = form.querySelector('.form-success');
+      const errorEl   = form.querySelector('.form-error');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      successEl.style.display = 'none';
+      errorEl.style.display = 'none';
+      const nombre = form.querySelector('[name="nombre"]').value;
+      const email = form.querySelector('[name="email"]').value;
+      const telefono = form.querySelector('[name="telefono"]').value;
+      const mensaje = form.querySelector('[name="mensaje"]').value;
+      const privacidad = form.querySelector('[name="privacidad"]').checked;
+      if (!nombre || !email || !telefono || !mensaje) {
+        errorEl.textContent = '⚠ Completa los campos obligatorios.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (!privacidad) {
+        errorEl.textContent = '⚠ Debes aceptar la política de privacidad.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      submitBtn.disabled = true;
+      const oldText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+      const formData = new FormData(form);
+      try {
+        const formObj = {};
+        formData.forEach((value, key) => { formObj[key] = value; });
+        const response = await fetch('https://formsubmit.co/ajax/borjai.agencia@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(formObj)
+        });
+        const data = await response.json();
+        if (data.success === 'true' || data.success === true) {
+          if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-formulario' });
+          }
+          successEl.style.display = 'block';
+          form.reset();
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(data.message || 'Error');
+        }
+      } catch (err) {
+        console.error(err);
+        const waText = encodeURIComponent(
+          `Hola Gogoa,\n\n` +
+          `Nombre: ${nombre}\n` +
+          `Email: ${email}\n` +
+          `Teléfono: ${telefono}\n\n` +
+          `${mensaje}`
+        );
+        errorEl.innerHTML = `⚠ Algo ha fallado. <a href="https://wa.me/34618792084?text=${waText}" target="_blank" style="color:#991B1B;text-decoration:underline;font-weight:700;">Escríbenos por WhatsApp →</a>`;
+        errorEl.style.display = 'block';
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = oldText;
+    }
+    document.querySelectorAll('#leadForm').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleFormSubmit(form);
+      });
+    });
+
+    // Conversión: inicio de conversación por WhatsApp (todos los enlaces wa.me de la home)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+      a.addEventListener('click', () => {
+        if (typeof fbq !== 'undefined') fbq('track', 'Contact');
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-whatsapp' });
+          gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'home' });
+        }
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TR0SJVF411"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TR0SJVF411');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1563652121852282');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1563652121852282&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x2d662lms5");
+</script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11341761661"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11341761661');
 </script>
 </body>
 </html>
