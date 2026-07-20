@@ -454,6 +454,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div style="max-width:640px;margin:0 auto;background:linear-gradient(135deg,var(--purple-deep) 0%,#2a1065 100%);border-radius:var(--r-lg);padding:34px 30px;text-align:center;box-shadow:0 20px 50px rgba(76,29,149,0.28);">
+      <div style="display:inline-block;padding:7px 16px;background:rgba(217,70,239,0.2);border:1px solid rgba(232,121,249,0.4);border-radius:999px;font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#E879F9;margin-bottom:16px;">Sistema completo</div>
+      <h3 style="font-size:clamp(22px,5vw,28px);font-weight:900;letter-spacing:-0.03em;margin-bottom:10px;color:#fff;">¿Buscas algo más que salir en <span style="color:#E879F9">Maps</span>?</h3>
+      <p style="color:rgba(255,255,255,0.85);font-size:16px;line-height:1.55;max-width:480px;margin:0 auto 22px;">La ficha es la base. Si lo que necesitas es un sistema que atraiga clientes, los convierta y venda por ti — anuncios, web y WhatsApp trabajando juntos — eso también es lo nuestro.</p>
+      <a href="index.html" onclick="if(typeof gtag!=='undefined')gtag('event','sistema_bridge_click',{event_category:'navigation'});" style="display:inline-flex;align-items:center;gap:10px;background:var(--magenta);color:#fff;padding:15px 28px;border-radius:999px;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 10px 26px rgba(217,70,239,0.45);">Conoce el sistema completo →</a>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <h2 class="sec-title">Preguntas <span class="mag">rápidas</span></h2>
@@ -485,6 +496,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     </div>
   </div>
 </section>
+
 
 <section class="final">
   <div class="wrap">
@@ -529,8 +541,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     a.addEventListener('click', () => {
       if (typeof fbq !== 'undefined') fbq('track', 'Contact');
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'generate_lead', { currency: 'EUR', value: 150 });
         gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'ficha-google' });
+        try {
+          if (!sessionStorage.getItem('gl_ficha')) {
+            gtag('event', 'generate_lead', { currency: 'EUR', value: 150 });
+            sessionStorage.setItem('gl_ficha', '1');
+          }
+        } catch (e) {
+          gtag('event', 'generate_lead', { currency: 'EUR', value: 150 });
+        }
       }
     });
   });
