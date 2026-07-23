@@ -3112,8 +3112,15 @@
       a.addEventListener('click', () => {
         if (typeof fbq !== 'undefined') fbq('track', 'Contact');
         if (typeof gtag !== 'undefined') {
-          gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-whatsapp' });
           gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'home' });
+          try {
+            if (Date.now() - window.__pageLoadT > 8000 && !sessionStorage.getItem('gl_home')) {
+              gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-whatsapp' });
+              sessionStorage.setItem('gl_home', '1');
+            }
+          } catch (e) {
+            gtag('event', 'generate_lead', { currency: 'EUR', value: 500, event_label: 'home-whatsapp' });
+          }
         }
       });
     });
@@ -3136,6 +3143,7 @@
   gtag('config', 'G-TR0SJVF411');
 </script>
   <!-- Meta Pixel Code -->
+<script>window.__pageLoadT = Date.now();</script>
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

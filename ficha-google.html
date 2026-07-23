@@ -7,6 +7,7 @@
 <meta name="description" content="Te montamos la ficha de tu negocio en Google Maps, completa y verificada. 150€ + IVA, pago único, sin cuotas. Para que te llamen los clientes de tu zona.">
 
 <!-- Meta Pixel -->
+<script>window.__pageLoadT = Date.now();</script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -543,7 +544,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       if (typeof gtag !== 'undefined') {
         gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'ficha-google' });
         try {
-          if (!sessionStorage.getItem('gl_ficha')) {
+          if (Date.now() - window.__pageLoadT > 8000 && !sessionStorage.getItem('gl_ficha')) {
             gtag('event', 'generate_lead', { currency: 'EUR', value: 150 });
             sessionStorage.setItem('gl_ficha', '1');
           }
