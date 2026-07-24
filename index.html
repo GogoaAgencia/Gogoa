@@ -1793,16 +1793,85 @@
   </style>
 </head>
 <body>
-  <!-- ═══ NAV — Solo WhatsApp ═══ -->
+  <!-- ═══ NAV — Solo logo ═══ -->
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#" class="logo">GOGOA<span>.</span></a>
-      <a href="https://wa.me/34618792084?text=Hola%20Gogoa%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20info" class="btn btn-wa-strong nav-wa-pulse" target="_blank" rel="noopener" id="navWaCta">
-        <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-        ¿Hablamos?
-      </a>
     </div>
   </nav>
+  <!-- ═══ WIDGET FLOTANTE WHATSAPP (dos pasos) ═══ -->
+  <div id="waWidget" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:12px;">
+    <div id="waPanel" style="display:none;background:#fff;border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,0.22);padding:20px;width:270px;border:1px solid #E5E7EB;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+        <div style="font-weight:900;font-size:16px;color:#111827;">¿Hablamos? 👋</div>
+        <button id="waClose" aria-label="Cerrar" style="border:none;background:none;font-size:18px;color:#9CA3AF;cursor:pointer;line-height:1;padding:2px;">✕</button>
+      </div>
+      <p style="font-size:14px;color:#374151;line-height:1.5;margin-bottom:14px;">Cuéntanos qué necesita tu negocio y te respondemos hoy mismo.</p>
+      <button type="button" id="navWaCta" style="width:100%;display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;padding:13px 18px;border-radius:999px;font-weight:800;font-size:15px;border:none;cursor:pointer;font-family:inherit;box-shadow:0 8px 20px rgba(37,211,102,0.4);">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+        <span class="wa-cta-txt">Abrir WhatsApp</span>
+      </button>
+    </div>
+    <button id="waFab" aria-label="Hablar por WhatsApp" style="width:60px;height:60px;border-radius:50%;border:none;background:#25D366;box-shadow:0 10px 28px rgba(37,211,102,0.45);cursor:pointer;display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 24 24" style="width:30px;height:30px;fill:#fff;"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+    </button>
+  </div>
+  <!-- Modal de confirmación WhatsApp -->
+  <div id="waModal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(17,24,39,0.55);align-items:center;justify-content:center;padding:22px;">
+    <div style="background:#fff;border-radius:20px;max-width:400px;width:100%;padding:28px 26px;box-shadow:0 30px 80px rgba(0,0,0,0.3);text-align:center;">
+      <div style="font-size:34px;margin-bottom:10px;">💬</div>
+      <h3 style="font-size:20px;font-weight:900;letter-spacing:-0.02em;color:#111827;margin-bottom:10px;">Antes de abrir WhatsApp</h3>
+      <p style="font-size:14.5px;color:#374151;line-height:1.55;margin-bottom:20px;">Este chat es para hablar de <strong>montar un sistema de captación (embudo) en tu negocio</strong> — anuncios, web y WhatsApp trabajando juntos para traerte clientes. Si es lo que buscas, adelante 👇</p>
+      <a href="https://wa.me/34618792084?text=Hola%20Gogoa%2C%20quiero%20informaci%C3%B3n%20sobre%20montar%20un%20sistema%20de%20captaci%C3%B3n%20para%20mi%20negocio" target="_blank" rel="noopener" id="waConfirm" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 8px 20px rgba(37,211,102,0.4);margin-bottom:10px;">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+        Sí, abrir WhatsApp
+      </a>
+      <button type="button" id="waCancel" style="border:none;background:none;color:#6B7280;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;padding:8px;">Ahora no</button>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const fab = document.getElementById('waFab');
+      const panel = document.getElementById('waPanel');
+      const close = document.getElementById('waClose');
+      const cta = document.getElementById('navWaCta');
+      let armTimer = null;
+      function disarm() {
+        clearTimeout(armTimer);
+        cta.style.pointerEvents = 'none';
+        cta.style.background = '#9CA3AF';
+        cta.style.boxShadow = 'none';
+        cta.querySelector('.wa-cta-txt').textContent = 'Un momento…';
+      }
+      function arm() {
+        cta.style.pointerEvents = 'auto';
+        cta.style.background = '#25D366';
+        cta.style.boxShadow = '0 8px 20px rgba(37,211,102,0.4)';
+        cta.querySelector('.wa-cta-txt').textContent = 'Abrir WhatsApp';
+      }
+      fab.addEventListener('click', () => {
+        const open = panel.style.display !== 'none';
+        if (open) { panel.style.display = 'none'; return; }
+        panel.style.display = 'block';
+        disarm();
+        armTimer = setTimeout(arm, 1500);
+        if (typeof gtag !== 'undefined') gtag('event', 'wa_widget_open', { event_category: 'engagement' });
+      });
+      close.addEventListener('click', () => { panel.style.display = 'none'; });
+      const modal = document.getElementById('waModal');
+      cta.addEventListener('click', () => {
+        panel.style.display = 'none';
+        modal.style.display = 'flex';
+        if (typeof gtag !== 'undefined') gtag('event', 'wa_modal_open', { event_category: 'engagement' });
+      });
+      document.getElementById('waCancel').addEventListener('click', () => { modal.style.display = 'none'; });
+      modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+      document.getElementById('waConfirm').addEventListener('click', () => { setTimeout(() => { modal.style.display = 'none'; }, 300); });
+      document.addEventListener('click', (e) => {
+        if (panel.style.display !== 'none' && !document.getElementById('waWidget').contains(e.target)) panel.style.display = 'none';
+      });
+    })();
+  </script>
   <!-- ═══ HERO — sin botones, solo mensaje ═══ -->
   <section class="hero">
     <div class="container">
@@ -2987,11 +3056,6 @@
               <button type="submit" class="btn btn-magenta btn-block form-submit-btn" id="submitBtn">
                 Solicitar diagnóstico gratuito →
               </button>
-              <div class="form-divider">o</div>
-              <a class="wa-btn" href="https://wa.me/34618792084?text=Hola%20Gogoa%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20info" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-                Escríbenos por WhatsApp
-              </a>
               <div class="form-success" id="formSuccess">✓ ¡Mensaje enviado! Te respondemos en menos de 24h.</div>
               <div class="form-error" id="formError">⚠ Algo ha fallado. Inténtalo o escríbenos por WhatsApp.</div>
             </div>
