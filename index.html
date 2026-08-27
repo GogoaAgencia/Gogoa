@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#D946EF">
   <title>Gogoa · Más clientes para tu negocio en automático</title>
-  <meta name="description" content="Sistema de captación de clientes para PYMES. Restaurantes, casas rurales, clínicas, tiendas. Diagnóstico gratis, sin permanencia, respuesta en 24h.">
+  <meta name="description" content="Montamos tu embudo de ventas completo: anuncios, web y WhatsApp conectados para captar clientes. Para clínicas, reformas, instaladores y servicios. Diagnóstico gratis.">
   <meta property="og:title" content="Gogoa · Más clientes para tu negocio">
   <meta property="og:description" content="Atraemos, convertimos y vendemos en automático. Para PYMES como la tuya. Sin permanencia. Diagnóstico gratis.">
   <meta property="og:type" content="website">
@@ -43,7 +43,7 @@
       --lavender-2:     #EDE9FE;
       --pink-soft:      #FCE7F8;
       --gray-line:      #E5E7EB;
-      --gray:           #6B7280;
+      --gray:           #596273;
       --body:           #1F2937;
       --ink:            #111827;
       --green:          #16a34a;
@@ -1868,6 +1868,16 @@
       modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
       document.getElementById('waConfirm').addEventListener('click', () => { setTimeout(() => { modal.style.display = 'none'; }, 300); });
       document.addEventListener('click', (e) => {
+        if (e.target.closest && e.target.closest('#ctaEarlyWa')) {
+          document.getElementById('waModal').style.display = 'flex';
+          if (typeof gtag !== 'undefined') gtag('event', 'wa_modal_open', { event_category: 'engagement', event_label: 'cta-temprano' });
+        }
+        if (e.target.closest && e.target.closest('#ctaMidWa')) {
+          document.getElementById('waModal').style.display = 'flex';
+          if (typeof gtag !== 'undefined') gtag('event', 'wa_modal_open', { event_category: 'engagement', event_label: 'cta-embudo' });
+        }
+      });
+      document.addEventListener('click', (e) => {
         if (panel.style.display !== 'none' && !document.getElementById('waWidget').contains(e.target)) panel.style.display = 'none';
       });
     })();
@@ -1884,7 +1894,6 @@
         </h1>
         <p class="hero-sub">
           Montamos el sistema de captación que convierte tu inversión en clientes.
-          Para <strong>clínicas, reformas, instaladores y empresas de servicios</strong> — negocios con ganas de crecer.
         </p>
         <div class="micro-trust">
           <span class="micro-trust-item">Diagnóstico gratis</span>
@@ -1895,97 +1904,55 @@
       </div>
     </div>
   </section>
+  <!-- ═══ EXPERIENCIA DEL EQUIPO ═══ -->
+  <section style="padding:56px 0;background:var(--ink);color:#fff;">
+    <div class="container">
+      <p style="text-align:center;font-size:13px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--magenta);margin-bottom:10px;">Experiencia del equipo</p>
+      <h2 style="text-align:center;font-size:clamp(22px,4.5vw,30px);font-weight:900;letter-spacing:-0.03em;line-height:1.3;max-width:720px;margin:0 auto 32px;color:#fff;">Desde 2014 trabajando en proyectos de marketing y datos para <span style="color:var(--magenta)">marcas de primer nivel</span>.</h2>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:12px;max-width:800px;margin:0 auto;">
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">Mercadona</div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">Toyota</div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">Leroy Merlin</div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">Philip Morris</div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">MásMóvil</div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:16px 26px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.14);border-radius:14px;font-size:clamp(17px,3vw,23px);font-weight:800;letter-spacing:0.01em;color:#fff;">Helvetia Seguros</div>
+      </div>
+      <p style="text-align:center;font-size:14px;color:rgba(255,255,255,0.55);margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.5;">Experiencia profesional previa del equipo de Gogoa en proyectos para estas marcas, con anterioridad y de forma independiente a la agencia.</p>
+    </div>
+  </section>
+  <!-- ═══ CTA TEMPRANO ═══ -->
+  <section style="padding:44px 0;background:#fff;border-bottom:1px solid var(--gray-line);">
+    <div class="container">
+      <div style="max-width:680px;margin:0 auto;text-align:center;">
+        <p style="font-size:clamp(18px,3.5vw,22px);font-weight:800;letter-spacing:-0.02em;line-height:1.4;margin-bottom:22px;">¿Hablamos de cómo conseguir más clientes para tu negocio?</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+          <a href="#contacto" style="display:inline-flex;align-items:center;gap:9px;background:var(--magenta);color:#fff;padding:14px 26px;border-radius:999px;font-weight:800;font-size:15px;text-decoration:none;box-shadow:0 10px 26px rgba(217,70,239,0.35);">
+            Escríbenos por email →
+          </a>
+          <button type="button" id="ctaEarlyWa" style="display:inline-flex;align-items:center;gap:9px;background:#fff;border:2px solid var(--wa-green);color:var(--wa-dark);padding:14px 26px;border-radius:999px;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+            Hablar por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- ═══ SECTORES (chips) ═══ -->
-  <section class="sectors-section" id="sectores">
-    <div class="container">
-      <div class="sectors-head reveal">
-        <h2>Trabajamos con negocios <span class="accent">como el tuyo</span>.</h2>
-        <p>Sectores para los que está pensado el sistema.</p>
-      </div>
-      <p class="sectors-list reveal">
-        Clínicas y salud <span class="sep">·</span>
-        Reformas y construcción <span class="sep">·</span>
-        Instaladores y oficios <span class="sep">·</span>
-        Servicios profesionales <span class="sep">·</span>
-        Belleza y estética <span class="sep">·</span>
-        Inmobiliaria <span class="sep">·</span>
-        Asesorías y despachos <span class="sep">·</span>
-        Talleres y automoción <span class="sep">·</span>
-        Educación y formación <span class="sep">·</span>
-        Comercio local <span class="sep">·</span>
-        E-commerce <span class="sep">·</span>
-        SaaS y B2B
-      </p>
-    </div>
-  </section>
-  <!-- ═══ HOW IT WORKS ═══ -->
-  <section class="how">
-    <div class="container">
-      <div class="how-head reveal">
-        <h2>Tu embudo, <span class="accent">funcionando solo</span>.</h2>
-        <p>Tres piezas que trabajan juntas para que el sistema atraiga, capture y venda mientras tú te ocupas del negocio.</p>
-      </div>
-      <div class="steps reveal">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h3>Atraemos</h3>
-          <p>Anuncios en Instagram, Facebook y Google que llegan a la gente que ya busca lo que ofreces. Pagas solo por quienes muestran interés real.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h3>Convertimos</h3>
-          <p>Web y formularios diseñados para capturar a los interesados. Cada visita tiene un camino claro: contactarte o reservar contigo.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h3>Vendemos</h3>
-          <p>Emails y WhatsApp automatizados que acompañan al cliente hasta la compra. Tú solo atiendes a quien ya decidió comprar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ═══ FICHA BRIDGE ═══ -->
-  <section class="ficha-bridge-section">
-    <div class="container">
-      <div class="ficha-bridge reveal">
-        <div class="ficha-bridge-text">
-          <h3>¿Solo necesitas salir en <span class="accent">Google Maps</span>?</h3>
-          <p>Te montamos la ficha de Google de tu negocio, completa y verificada, por <strong>150€, pago único, sin cuotas</strong>. Y si lo que buscas es el sistema completo de captación, sigue bajando — te lo enseñamos paso a paso.</p>
-        </div>
-        <a class="ficha-bridge-cta" href="ficha-google.html" onclick="if(typeof gtag!=='undefined')gtag('event','ficha_bridge_click',{event_category:'navigation'});">
-          Ver cómo funciona →
-        </a>
-      </div>
-    </div>
-  </section>
   <!-- ═══════════════════════════════════════════════════════════
        FUNNEL VISUAL — Embudo A2 con valor añadido por etapa
        ═══════════════════════════════════════════════════════════ -->
   <section class="funnel-section" id="embudo">
     <div class="container">
-      <div class="funnel-head reveal">
-        <h2>Así funciona <span class="accent">en tu negocio</span>.</h2>
-        <p>Mira el viaje completo de un cliente potencial — desde que ve tu anuncio hasta que cerramos la venta. De 100 personas que ven el ad, 5 acaban siendo cliente. Esa es la realidad de un embudo bien montado.</p>
-      </div>
-      <div class="funnel-tabs reveal" role="tablist">
-        <button class="funnel-tab is-active" data-target="clinicas" role="tab" aria-selected="true">
-          <span class="tab-icon">🏥</span>Clínicas y salud
-        </button>
-        <button class="funnel-tab" data-target="rurales" role="tab" aria-selected="false">
-          <span class="tab-icon">🏡</span>Casas rurales
-        </button>
-        <button class="funnel-tab" data-target="b2b" role="tab" aria-selected="false">
-          <span class="tab-icon">💼</span>Servicios B2B
-        </button>
-        <button class="funnel-tab" data-target="ecommerce" role="tab" aria-selected="false">
-          <span class="tab-icon">🛒</span>Tienda online
-        </button>
+      <div class="funnel-head reveal" style="text-align:center;max-width:680px;margin:0 auto 44px;">
+        <p style="font-size:13px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--magenta-deep);margin-bottom:12px;">Así funciona por dentro</p>
+        <h2 style="font-size:clamp(26px,5vw,38px);font-weight:900;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px;">El viaje de un cliente, <span style="color:var(--magenta-deep)">de principio a fin</span>.</h2>
+        <p style="font-size:17px;color:var(--body);line-height:1.6;">De 100 personas que ven tu anuncio, unas 5 acaban comprando. Este es el recorrido completo, paso a paso — es un ejemplo, pero la mecánica es la misma en cualquier sector.</p>
       </div>
       <div class="funnel-canvas reveal">
         <!-- ════ PANE: CLÍNICAS ════ -->
         <div class="funnel-pane is-active" data-pane="clinicas">
           <div class="funnel-context">
-            <strong>Ejemplo · Clínica dental privada en Madrid.</strong> Una persona con dolor de muelas busca "dentista urgencia" en Google a las 23h. Así llega hasta tener cita confirmada para mañana a las 10h, sin que tú levantes el móvil.
+            <strong>Ejemplo · una clínica dental.</strong> Sirve para verlo con un caso concreto, pero el mismo recorrido vale para una reforma, una asesoría o un instalador. Una persona con dolor de muelas busca "dentista urgencia" a las 23h — y así llega hasta tener cita confirmada, sin que tú levantes el móvil.
           </div>
           <div class="flow">
             <!-- Stage 1: Anuncio -->
@@ -2189,790 +2156,53 @@
             </div>
           </div>
         </div>
-        <!-- ════ PANE: CASAS RURALES ════ -->
-        <div class="funnel-pane" data-pane="rurales">
-          <div class="funnel-context">
-            <strong>Ejemplo · Casa rural en Sierra de Cazorla.</strong> Una pareja busca escapada de fin de semana. Pasan de Booking (comisión 18%) a reservar directo contigo, y vuelven cada otoño sin pagar comisiones.
-          </div>
-          <div class="flow">
-            <div class="stage-row s-1">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">01</div>
-                    <div class="stage-eyebrow">Anuncio</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>100 personas lo ven</div>
-                  <div class="stage-title">Tu anuncio trabaja 24/7</div>
-                  <div class="stage-value">Una foto bonita de tu casa al atardecer, en Instagram y Google, dirigida a quien ya está <strong>buscando escapada rural</strong>. Sin disparar a ciegas.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="ad-formats">
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon ig">
-                          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="white"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E1306C" stroke-width="2.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">Instagram</span>
-                        <span class="ad-format-platform-tag">Anuncio</span>
-                      </div>
-                      <div class="ad-format-image-content">
-                        <div class="ad-format-author">
-                          <div class="ad-format-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);"></div>
-                          <span class="ad-format-handle">casarural_es</span>
-                        </div>
-                        <div class="ad-format-image rural"></div>
-                        <div class="ad-format-headline">Escapada rural sin comisión</div>
-                        <div class="ad-format-cta">Ver fechas →</div>
-                      </div>
-                    </div>
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon google">
-                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">Google</span>
-                        <span class="ad-format-platform-tag">Búsqueda</span>
-                      </div>
-                      <div class="ad-format-search-content">
-                        <div class="ad-search-bar">
-                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                          casa rural cazorla
-                        </div>
-                        <div class="ad-search-result">
-                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · cortijodelvalle.es</div>
-                          <div class="ad-search-title">Casa Rural Cazorla · Sin Comisión</div>
-                          <div class="ad-search-desc">Reserva directa. Hasta 18% más barato.</div>
-                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.8 (340)</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-2">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">02</div>
-                    <div class="stage-eyebrow">Landing</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la web</div>
-                  <div class="stage-title">Reserva directa, sin pasar por Booking</div>
-                  <div class="stage-value">Dos botones: <strong>reservar al momento</strong> o <strong>chatear por WhatsApp</strong> para preguntar disponibilidad. Motor de reservas propio + comparativa visible "directo vs Booking". El huésped decide cómo contactar.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="landing-screen">
-                        <div class="landing-content">
-                          <div class="landing-nav">
-                            <div class="landing-logo">Cortijo</div>
-                            <div class="landing-burger"><span></span><span></span><span></span></div>
-                          </div>
-                          <div class="landing-hero">
-                            <div class="landing-hero-eyebrow">CASA RURAL · CAZORLA</div>
-                            <div class="landing-hero-title">Reserva directa</div>
-                            <div class="landing-hero-sub">Sin comisiones · Hasta 18% más barato</div>
-                            <div class="landing-hero-cta">Ver fechas →</div>
-                          </div>
-                          <div class="landing-trust">
-                            <span>★★★★★ 4.8</span>
-                            <span>+340 huéspedes</span>
-                          </div>
-                          <div class="landing-actions">
-                            <div class="landing-actions-title">¿Cómo prefieres reservar?</div>
-                            <div class="landing-action-btn primary">Reservar ahora →</div>
-                            <div class="landing-action-or">o pregunta primero</div>
-                            <div class="landing-action-btn wa">
-                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-                              WhatsApp
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-3">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">03</div>
-                    <div class="stage-eyebrow">Formulario</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>15 dejan datos</div>
-                  <div class="stage-title">Reserva con un solo paso</div>
-                  <div class="stage-value">Fechas, ocupantes, datos. Sin redirección a Booking, sin <strong>pagar 18% de comisión</strong>. El margen vuelve a tu bolsillo.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="form-fill-screen">
-                        <div class="form-fill-header">Reserva tu escapada</div>
-                        <div class="form-fill-field field-1"><span class="typed">Marcos y Ana</span></div>
-                        <div class="form-fill-field field-2"><span class="typed">m.castro@gmail.com</span></div>
-                        <div class="form-fill-field field-3"><span class="typed">2 noches · 2p</span></div>
-                        <div class="form-fill-submit">Reservar ahora</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-4">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">04</div>
-                    <div class="stage-eyebrow">Comercial digital</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>10 conversan</div>
-                  <div class="stage-title">Asistente que cuida la reserva</div>
-                  <div class="stage-value">Tu <strong>chatbot WhatsApp</strong> confirma, da indicaciones para llegar, sugiere actividades. El huésped llega a casa antes incluso de pisarla.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="chat-screen">
-                        <div class="chat-header">
-                          <div class="chat-avatar">CR</div>
-                          <div class="chat-header-info">
-                            <div class="chat-header-name">Cortijo del Valle</div>
-                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
-                          </div>
-                        </div>
-                        <div class="chat-body">
-                          <div class="chat-bubble bot b1">¡Hola Marcos! 🌿 ¿Necesitas algo?</div>
-                          <div class="chat-bubble user b2">¿A qué hora puedo llegar?</div>
-                          <div class="chat-bubble bot b3">Check-in desde las 16h 🌅</div>
-                          <div class="chat-bubble user b4">Perfecto, gracias</div>
-                          <div class="chat-bubble bot success b5">Te envío indicaciones</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-5">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">05</div>
-                    <div class="stage-eyebrow">Cierre</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>5 reservan</div>
-                  <div class="stage-title">Cerramos la venta</div>
-                  <div class="stage-value">Reserva 100% directa. <strong>Cero comisión</strong> a Booking. Ese margen es ahora tuyo, y el huésped tiene tus datos para volver.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="sale-screen">
-                        <div class="sale-check">
-                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
-                        </div>
-                        <div class="sale-title">Reserva confirmada</div>
-                        <div class="sale-detail">Marcos · 2 noches · 380€</div>
-                        <div class="sale-kpi">85% OCUPACIÓN</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ════ PANE: B2B ════ -->
-        <div class="funnel-pane" data-pane="b2b">
-          <div class="funnel-context">
-            <strong>Ejemplo · Asesoría laboral en Valencia.</strong> Una PYME con 22 empleados busca cambiar de gestoría. En 3 días la empresa pasa de buscar en Google a firmar contrato con el despacho — sin que el socio tenga que ir tras el cliente.
-          </div>
-          <div class="flow">
-            <div class="stage-row s-1">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">01</div>
-                    <div class="stage-eyebrow">Anuncio</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>100 empresas lo ven</div>
-                  <div class="stage-title">Tu anuncio busca empresas</div>
-                  <div class="stage-value"><strong>LinkedIn Ads + Google Search</strong> dirigido a CEOs y RRHH de empresas con 10-50 empleados. No despertamos al que no busca — alcanzamos al que ya está mirando.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="ad-formats">
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon li">
-                          <svg viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8 18v-7H5v7h3zm-1.5-8.3a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4zM19 18v-4c0-1.9-1.1-3-3-3-1 0-1.7.5-2 1v-1h-3v7h3v-4c0-.8.5-1.3 1.3-1.3.7 0 1.2.5 1.2 1.3v4h2.5z"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">LinkedIn</span>
-                        <span class="ad-format-platform-tag">Patrocinado</span>
-                      </div>
-                      <div class="ad-format-image-content">
-                        <div class="ad-format-author">
-                          <div class="ad-format-avatar li-avatar"></div>
-                          <span class="ad-format-handle">Despacho · Asesoría</span>
-                        </div>
-                        <div class="ad-format-image b2b"></div>
-                        <div class="ad-format-headline">Asesoría laboral para PYMES</div>
-                        <div class="ad-format-cta">Pedir propuesta →</div>
-                      </div>
-                    </div>
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon google">
-                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">Google</span>
-                        <span class="ad-format-platform-tag">Búsqueda</span>
-                      </div>
-                      <div class="ad-format-search-content">
-                        <div class="ad-search-bar">
-                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                          asesoría laboral pymes valencia
-                        </div>
-                        <div class="ad-search-result">
-                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · despacho-laboral.es</div>
-                          <div class="ad-search-title">Asesoría Laboral · 15 años en PYMES</div>
-                          <div class="ad-search-desc">Especialistas en PYMES de 10-50 empleados.</div>
-                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.9 (87)</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-2">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">02</div>
-                    <div class="stage-eyebrow">Landing</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la web</div>
-                  <div class="stage-title">Decisión rápida o conversación</div>
-                  <div class="stage-value">Dos botones: <strong>agendar una call</strong> o <strong>chatear por WhatsApp</strong> con un socio del despacho. El CEO elige el ritmo según su momento de decisión. Cero formularios largos en mobile.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="landing-screen">
-                        <div class="landing-content">
-                          <div class="landing-nav">
-                            <div class="landing-logo">Despacho</div>
-                            <div class="landing-burger"><span></span><span></span><span></span></div>
-                          </div>
-                          <div class="landing-hero">
-                            <div class="landing-hero-eyebrow">ASESORÍA · VALENCIA</div>
-                            <div class="landing-hero-title">Propuesta a medida</div>
-                            <div class="landing-hero-sub">Especialistas en PYMES de 10-50 empleados</div>
-                            <div class="landing-hero-cta">Agendar call →</div>
-                          </div>
-                          <div class="landing-trust">
-                            <span>+150 PYMES</span>
-                            <span>15 años</span>
-                          </div>
-                          <div class="landing-actions">
-                            <div class="landing-actions-title">¿Cómo prefieres avanzar?</div>
-                            <div class="landing-action-btn primary">Agendar call →</div>
-                            <div class="landing-action-or">o habla ahora</div>
-                            <div class="landing-action-btn wa">
-                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-                              WhatsApp
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-3">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">03</div>
-                    <div class="stage-eyebrow">Formulario</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>15 dejan datos</div>
-                  <div class="stage-title">Cualificación previa automática</div>
-                  <div class="stage-value">Empresa, sector, número de empleados, necesidad concreta. Llegas a la llamada con <strong>el caso ya analizado</strong>, no a preguntar lo básico.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="form-fill-screen">
-                        <div class="form-fill-header">Pide propuesta</div>
-                        <div class="form-fill-field field-1"><span class="typed">Roberto Díaz</span></div>
-                        <div class="form-fill-field field-2"><span class="typed">Solidario SL · 22 emp</span></div>
-                        <div class="form-fill-field field-3"><span class="typed">Cambio gestor</span></div>
-                        <div class="form-fill-submit">Solicitar</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-4">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">04</div>
-                    <div class="stage-eyebrow">Comercial digital</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>10 conversan</div>
-                  <div class="stage-title">Pre-cualificación previa a la call</div>
-                  <div class="stage-value">Un <strong>asistente por WhatsApp</strong> pide los datos clave, manda un caso similar de ejemplo y agenda la call. El CEO llega caliente y con expectativa clara.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="chat-screen">
-                        <div class="chat-header">
-                          <div class="chat-avatar">D</div>
-                          <div class="chat-header-info">
-                            <div class="chat-header-name">Despacho · Asesoría</div>
-                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
-                          </div>
-                        </div>
-                        <div class="chat-body">
-                          <div class="chat-bubble bot b1">Hola Roberto 👋 ¿22 empleados ahora?</div>
-                          <div class="chat-bubble user b2">Sí, y queremos cambiar de gestor</div>
-                          <div class="chat-bubble bot b3">Te paso caso similar y agenda 📎</div>
-                          <div class="chat-bubble user b4">Perfecto, mañana 17:30 bien</div>
-                          <div class="chat-bubble bot success b5">Call agendada · Mañana 17:30</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-5">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">05</div>
-                    <div class="stage-eyebrow">Cierre</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>5 firman</div>
-                  <div class="stage-title">Cerramos la venta</div>
-                  <div class="stage-value">Contrato recurrente de <strong>3.400€/año LTV medio</strong>. La call ya viene preparada por ambos lados — solo queda confirmar el encaje.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="sale-screen">
-                        <div class="sale-check">
-                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
-                        </div>
-                        <div class="sale-title">Contrato firmado</div>
-                        <div class="sale-detail">Solidario SL · 22 empleados</div>
-                        <div class="sale-kpi">3.400€ LTV / CLIENTE</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ════ PANE: E-COMMERCE ════ -->
-        <div class="funnel-pane" data-pane="ecommerce">
-          <div class="funnel-context">
-            <strong>Ejemplo · Tienda online de cosmética natural.</strong> Una clienta ve el anuncio en Instagram a las 22h, mira el producto y se va sin comprar. Al día siguiente el sistema recupera su carrito — y compra. Sin que tú toques nada.
-          </div>
-          <div class="flow">
-            <div class="stage-row s-1">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">01</div>
-                    <div class="stage-eyebrow">Anuncio</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>100 personas lo ven</div>
-                  <div class="stage-title">Tu producto sale a buscar compradores</div>
-                  <div class="stage-value"><strong>Instagram + Google Shopping</strong> con tu catálogo conectado. Cada producto se anuncia solo, con su foto y su precio, a quien ya está mirando cosas parecidas.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="ad-formats">
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon ig">
-                          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="white"/><circle cx="12" cy="12" r="4" fill="none" stroke="#E1306C" stroke-width="2.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">Instagram</span>
-                        <span class="ad-format-platform-tag">Anuncio</span>
-                      </div>
-                      <div class="ad-format-image-content">
-                        <div class="ad-format-author">
-                          <div class="ad-format-avatar"></div>
-                          <span class="ad-format-handle">cosmetica_natural</span>
-                        </div>
-                        <div class="ad-format-image ecom"></div>
-                        <div class="ad-format-headline">Sérum Vitamina C · 29,90€</div>
-                        <div class="ad-format-cta">Comprar ahora →</div>
-                      </div>
-                    </div>
-                    <div class="ad-format">
-                      <div class="ad-format-header">
-                        <span class="ad-format-platform-icon google">
-                          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.3c0-.8-.1-1.5-.2-2.2H12v4.2h5.9c-.3 1.4-1 2.5-2.2 3.3v2.7h3.5c2.1-1.9 3.3-4.7 3.3-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.5-2.7c-1 .7-2.2 1.1-3.7 1.1-2.8 0-5.3-1.9-6.1-4.5H2.2v2.8C4 20.3 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.9 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3V7H2.2C1.4 8.5 1 10.2 1 12s.4 3.5 1.2 5l3.7-2.7z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.4 2.1 14.9 1 12 1 7.7 1 4 3.7 2.2 7l3.7 2.8c.9-2.6 3.3-4.4 6.1-4.4z"/></svg>
-                        </span>
-                        <span class="ad-format-platform-name">Google</span>
-                        <span class="ad-format-platform-tag">Shopping</span>
-                      </div>
-                      <div class="ad-format-search-content">
-                        <div class="ad-search-bar">
-                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                          sérum vitamina c natural
-                        </div>
-                        <div class="ad-search-result">
-                          <div class="ad-search-tag"><span class="ad-search-tag-label">Anuncio</span> · Shopping</div>
-                          <div class="ad-search-title">Sérum Vitamina C · 29,90€ · Envío 24h</div>
-                          <div class="ad-search-desc">Cosmética natural certificada. Envío gratis +45€.</div>
-                          <div class="ad-search-rating">★★★★★<span class="ad-search-rating-num">4.8 (2.400)</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-2">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">02</div>
-                    <div class="stage-eyebrow">Ficha de producto</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>40 entran a la tienda</div>
-                  <div class="stage-title">Una ficha que vende sola</div>
-                  <div class="stage-value">Foto clara, precio visible, <strong>compra en un clic</strong> y WhatsApp para dudas de última hora. En móvil, cada segundo de fricción son ventas perdidas.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="landing-screen">
-                        <div class="landing-content">
-                          <div class="landing-nav">
-                            <div class="landing-logo">Naturea</div>
-                            <div class="landing-burger"><span></span><span></span><span></span></div>
-                          </div>
-                          <div class="landing-hero">
-                            <div class="landing-hero-eyebrow">COSMÉTICA NATURAL</div>
-                            <div class="landing-hero-title">Sérum Vitamina C</div>
-                            <div class="landing-hero-sub">29,90€ · Envío gratis desde 45€</div>
-                            <div class="landing-hero-cta">Añadir al carrito →</div>
-                          </div>
-                          <div class="landing-trust">
-                            <span>★ 4,8 · 2.400 reseñas</span>
-                            <span>Envío 24h</span>
-                          </div>
-                          <div class="landing-actions">
-                            <div class="landing-actions-title">¿Lista para probarlo?</div>
-                            <div class="landing-action-btn primary">Comprar ahora →</div>
-                            <div class="landing-action-or">o pregúntanos</div>
-                            <div class="landing-action-btn wa">
-                              <svg viewBox="0 0 24 24"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
-                              WhatsApp
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-3">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">03</div>
-                    <div class="stage-eyebrow">Carrito</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>15 añaden al carrito</div>
-                  <div class="stage-title">El momento crítico de toda tienda</div>
-                  <div class="stage-value">7 de cada 10 carritos se abandonan — es normal. La diferencia está en lo que pasa después: <strong>el sistema no deja morir esos carritos</strong>.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="form-fill-screen">
-                        <div class="form-fill-header">Tu carrito</div>
-                        <div class="form-fill-field field-1"><span class="typed">Sérum Vitamina C · 29,90€</span></div>
-                        <div class="form-fill-field field-2"><span class="typed">Crema hidratante · 19,90€</span></div>
-                        <div class="form-fill-field field-3"><span class="typed">Envío gratis ✓</span></div>
-                        <div class="form-fill-submit">Pagar 49,80€</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-4">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">04</div>
-                    <div class="stage-eyebrow">Recuperación</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>10 vuelven al carrito</div>
-                  <div class="stage-title">El carrito abandonado que se recupera solo</div>
-                  <div class="stage-value">Recordatorio automático por <strong>WhatsApp y email</strong> con el carrito guardado y un empujón para decidir. Es la venta que la mayoría de tiendas pierde — y la que más barata sale.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="chat-screen">
-                        <div class="chat-header">
-                          <div class="chat-avatar">N</div>
-                          <div class="chat-header-info">
-                            <div class="chat-header-name">Naturea · Tienda</div>
-                            <div class="chat-header-status"><span class="chat-status-dot"></span>en línea</div>
-                          </div>
-                        </div>
-                        <div class="chat-body">
-                          <div class="chat-bubble bot b1">Hola Ana 👋 te guardamos el carrito 🛒</div>
-                          <div class="chat-bubble user b2">¡Uy! Se me olvidó por completo</div>
-                          <div class="chat-bubble bot b3">Aquí lo tienes, con envío gratis 📎</div>
-                          <div class="chat-bubble user b4">Perfecto, lo compro ahora</div>
-                          <div class="chat-bubble bot success b5">Pedido confirmado · 49,80€</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="stage-connector"></div>
-            <div class="stage-row s-5">
-              <div class="stage">
-                <div class="stage-meta">
-                  <div class="stage-badge-row">
-                    <div class="stage-num">05</div>
-                    <div class="stage-eyebrow">Venta y recompra</div>
-                  </div>
-                  <div class="stage-count"><span class="stage-count-dot"></span>5 compran</div>
-                  <div class="stage-title">La venta se cierra — y se repite</div>
-                  <div class="stage-value">Cada euro en anuncios vuelve multiplicado y <strong>cada clienta entra en el circuito de recompra</strong>: email de reposición, novedades, ofertas a medida. La segunda venta ya no cuesta publicidad.</div>
-                </div>
-                <div class="stage-visual">
-                  <div class="device-frame">
-                    <div class="device-screen">
-                      <div class="sale-screen">
-                        <div class="sale-check">
-                          <svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg>
-                        </div>
-                        <div class="sale-title">Pedido confirmado</div>
-                        <div class="sale-detail">Carrito medio 49€ · Clienta recurrente</div>
-                        <div class="sale-kpi">ROAS 5,2× / MES</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <!-- ─── VALUE SUMMARY ─── -->
-      <div class="value-summary reveal">
-        <div class="value-summary-eyebrow">SISTEMA AUTOMATIZADO 24/7</div>
-        <h3>Mientras tú atiendes tu negocio, <span class="accent">el sistema está trabajando.</span></h3>
-        <div class="value-grid">
-          <div class="value-item">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </div>
-            <div class="value-text">
-              <span class="value-title">Atrayendo clientes</span>
-              <span class="value-desc">Tus anuncios corren 24/7 buscando a quien te necesita</span>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div class="value-text">
-              <span class="value-title">Cualificando contactos</span>
-              <span class="value-desc">Solo te llegan leads listos, no curiosos sin presupuesto</span>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </div>
-            <div class="value-text">
-              <span class="value-title">Respondiendo al instante</span>
-              <span class="value-desc">WhatsApp inteligente que cierra citas mientras duermes</span>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-            </div>
-            <div class="value-text">
-              <span class="value-title">Midiéndolo todo</span>
-              <span class="value-desc">Cada euro invertido, contabilizado y optimizado mes a mes</span>
-            </div>
-          </div>
-        </div>
-        <div class="tracking-block">
-          <span class="tracking-eyebrow">📊 Trazabilidad 100%</span>
-          <div class="tracking-dashboard">
-            <div class="tracking-dashboard-header">
-              <div>
-                <div class="tracking-dashboard-title">Tu mes a vista de pájaro</div>
-                <div class="tracking-dashboard-month">Reporte mensual</div>
-              </div>
-              <div class="tracking-dashboard-live">en directo</div>
-            </div>
-            <div class="tracking-stat">
-              <div class="tracking-stat-label">
-                <span class="tracking-stat-icon">
-                  <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
-                </span>
-                Has invertido
-              </div>
-              <div class="tracking-stat-value">800 €</div>
-            </div>
-            <div class="tracking-stat">
-              <div class="tracking-stat-label">
-                <span class="tracking-stat-icon">
-                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </span>
-                Clientes nuevos
-              </div>
-              <div class="tracking-stat-value">12</div>
-            </div>
-            <div class="tracking-stat">
-              <div class="tracking-stat-label">
-                <span class="tracking-stat-icon">
-                  <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                </span>
-                Te han generado
-              </div>
-              <div class="tracking-stat-value">4.200 €</div>
-            </div>
-            <div class="tracking-stat highlight">
-              <div class="tracking-stat-label">
-                <span class="tracking-stat-icon">
-                  <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                </span>
-                Retorno
-              </div>
-              <div class="tracking-stat-value">5,2 ×</div>
-            </div>
-          </div>
-          <div class="tracking-text">
-            <h4>Cada paso queda registrado · <span class="accent">cero suposiciones</span>.</h4>
-            <p>Desde que un cliente <strong>ve tu anuncio</strong>, hasta que <strong>entra en la web</strong>, <strong>deja sus datos</strong>, <strong>conversa con el chatbot</strong> y <strong>te paga</strong> — cada paso está medido y atribuido.</p>
-            <p>Cada mes te llega un reporte así de claro: <strong>cuánto has invertido, cuántos clientes te ha traído el sistema, cuánto te han facturado</strong> y cuál es tu retorno real por cada euro invertido.</p>
-            <p>Sin "creo que va bien". Sin estimaciones. Números reales, con nombre y apellido.</p>
-            <div class="tracking-pills">
-              <span class="tracking-pill">Google Analytics</span>
-              <span class="tracking-pill">Meta Pixel</span>
-              <span class="tracking-pill">Google Ads</span>
-              <span class="tracking-pill">Clarity</span>
-              <span class="tracking-pill">WhatsApp tracking</span>
-            </div>
-          </div>
-        </div>
-        <div class="value-summary-cta">
-          Tú solo recibes <strong>leads listos para comprar</strong>. El resto del trabajo, lo hace el sistema.
+    </div>
+  </section>
+  <!-- ═══ CTA REFUERZO (tras embudo) ═══ -->
+  <section style="padding:52px 0;background:linear-gradient(135deg,var(--purple-deep) 0%,#2a1065 100%);">
+    <div class="container">
+      <div style="max-width:640px;margin:0 auto;text-align:center;">
+        <h2 style="font-size:clamp(22px,4.5vw,30px);font-weight:900;letter-spacing:-0.02em;line-height:1.25;color:#fff;margin-bottom:14px;">¿Montamos este sistema <span style="color:#E879F9">en tu negocio</span>?</h2>
+        <p style="font-size:16px;color:rgba(255,255,255,0.82);line-height:1.55;margin-bottom:24px;">Diagnóstico gratis, sin permanencia. Te decimos con honestidad si tiene sentido para ti — encajemos o no.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+          <a href="#contacto" style="display:inline-flex;align-items:center;gap:9px;background:var(--magenta);color:#fff;padding:15px 30px;border-radius:999px;font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(217,70,239,0.4);">
+            Quiero mi diagnóstico gratis →
+          </a>
+          <button type="button" id="ctaMidWa" style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.3);color:#fff;padding:15px 30px;border-radius:999px;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit;">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M17.6 6.31a7.85 7.85 0 0 0-11.13 0 7.85 7.85 0 0 0-1.31 9.41l-1.14 4.17 4.27-1.12a7.84 7.84 0 0 0 3.74.95h.01a7.85 7.85 0 0 0 5.57-13.4Z"/></svg>
+            Hablar por WhatsApp
+          </button>
         </div>
       </div>
     </div>
   </section>
-  <!-- ═══ METODO — CÓMO TRABAJAMOS ═══ -->
-  <section class="metodo" id="metodo">
+  <!-- ═══ CREATIVIDADES ═══ -->
+  <section style="padding:72px 0;background:linear-gradient(160deg,#FAFAFA 0%,var(--lavender) 100%);">
     <div class="container">
-      <div class="metodo-head reveal">
-        <h2>Cómo trabajamos · <span class="accent">nuestro método</span>.</h2>
-        <p>Cuatro pasos. Cero humo. Si en cualquier punto algo no encaja, lo paramos sin dramas.</p>
+      <div style="text-align:center;max-width:640px;margin:0 auto 44px;">
+        <p style="font-size:13px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--magenta-deep);margin-bottom:10px;">Creatividades que enamoran</p>
+        <h2 style="font-size:clamp(24px,5vw,34px);font-weight:900;letter-spacing:-0.03em;line-height:1.2;margin-bottom:14px;">Un buen sistema empieza por un <span style="color:var(--magenta-deep)">anuncio que se para a mirar</span>.</h2>
+        <p style="font-size:16px;color:var(--body);line-height:1.6;">De nada sirve la mejor estrategia si el anuncio pasa desapercibido. Diseñamos las piezas —imágenes, vídeos y textos— pensadas para tu sector y para el móvil, donde tus clientes deciden en dos segundos si siguen mirando o siguen bajando.</p>
       </div>
-      <div class="metodo-grid reveal">
-        <div class="metodo-paso">
-          <div class="metodo-num">1</div>
-          <div class="metodo-tiempo">30 minutos · gratis</div>
-          <h3>Diagnóstico</h3>
-          <p>Te llamamos, miramos tu negocio, vemos por dónde sangra y por dónde puede crecer. Te llevas un plan accionable sin compromiso, encajemos o no.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;max-width:880px;margin:0 auto;">
+        <div style="background:#fff;border:1px solid var(--gray-line);border-radius:var(--r-lg);padding:26px 22px;text-align:center;">
+          <div style="font-size:30px;margin-bottom:12px;">🎨</div>
+          <h3 style="font-size:17px;font-weight:800;margin-bottom:8px;">Imágenes que destacan</h3>
+          <p style="font-size:14px;color:var(--body);line-height:1.55;">Diseños limpios y con identidad, adaptados a cada formato — feed, stories, búsqueda — para que tu marca no parezca una más.</p>
         </div>
-        <div class="metodo-paso">
-          <div class="metodo-num">2</div>
-          <div class="metodo-tiempo">14 – 21 días</div>
-          <h3>Sistema</h3>
-          <p>Montamos el funnel completo: ads, landing, tracking, automation de emails y WhatsApp. Todo listo y medible antes de meter un euro en publicidad.</p>
+        <div style="background:#fff;border:1px solid var(--gray-line);border-radius:var(--r-lg);padding:26px 22px;text-align:center;">
+          <div style="font-size:30px;margin-bottom:12px;">🎬</div>
+          <h3 style="font-size:17px;font-weight:800;margin-bottom:8px;">Vídeos que enganchan</h3>
+          <p style="font-size:14px;color:var(--body);line-height:1.55;">El formato que más convierte hoy. Vídeos cortos y directos que captan la atención en los primeros segundos y cuentan tu propuesta sin aburrir.</p>
         </div>
-        <div class="metodo-paso">
-          <div class="metodo-num">3</div>
-          <div class="metodo-tiempo">semana 3 – 4</div>
-          <h3>Lanzamiento</h3>
-          <p>Activamos campañas con presupuesto controlado. Los primeros leads suelen llegar entre la semana 3 y la 5. Tú solo atiendes a quien ya quiere comprar.</p>
-        </div>
-        <div class="metodo-paso">
-          <div class="metodo-num">4</div>
-          <div class="metodo-tiempo">cada mes · siempre</div>
-          <h3>Optimización</h3>
-          <p>Reporting transparente, ajustes en base a datos reales y una conversación honesta cada mes sobre qué funciona, qué cambia y dónde invertimos más.</p>
+        <div style="background:#fff;border:1px solid var(--gray-line);border-radius:var(--r-lg);padding:26px 22px;text-align:center;">
+          <div style="font-size:30px;margin-bottom:12px;">✍️</div>
+          <h3 style="font-size:17px;font-weight:800;margin-bottom:8px;">Textos que convencen</h3>
+          <p style="font-size:14px;color:var(--body);line-height:1.55;">Cada palabra elegida para conectar con tu cliente y empujar a la acción — sin promesas vacías ni relleno. El mensaje justo para tu público.</p>
         </div>
       </div>
-      <div class="anti-promesas reveal">
-        <div class="anti-promesas-head">
-          <div>
-            <div class="anti-promesas-eyebrow">LO QUE NO HACEMOS</div>
-            <h3>Las cosas que no vas a oír en una reunión con nosotros.</h3>
-          </div>
-        </div>
-        <p class="anti-promesas-lead">Hay agencias que prometen mucho y entregan poco. Nosotros preferimos prometer poco y entregar de verdad. Esto es lo que no hacemos:</p>
-        <ul class="anti-lista">
-          <li>
-            <div>
-              <span class="anti-lista-titulo">Números mágicos sin diagnosticar</span>
-              <span class="anti-lista-desc">No prometemos "×3" o "+200% ventas" sin haber visto tu negocio. Primero entendemos, luego planteamos.</span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <span class="anti-lista-titulo">Permanencias de 12 meses</span>
-              <span class="anti-lista-desc">Mínimo de 3 meses (lo necesita el algoritmo para aprender). Después, decides tú mes a mes si seguir o pausar.</span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <span class="anti-lista-titulo">Que te lleve un becario</span>
-              <span class="anti-lista-desc">Trato directo con quien decide. Sin "account managers" rotando ni reuniones con tres personas que no han visto tu cuenta.</span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <span class="anti-lista-titulo">Contenido genérico de stock</span>
-              <span class="anti-lista-desc">Cada campaña con creatividades propias, copy a medida, fotos reales (tuyas o producidas). Nada de imágenes de bancos.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <p style="text-align:center;font-size:15px;color:var(--body);margin-top:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.55;">Probamos varias versiones de cada anuncio y nos quedamos con las que mejor funcionan. <strong>Lo que no rinde, se cambia.</strong></p>
     </div>
   </section>
   <!-- ═══ FORM SECTION ═══ -->
